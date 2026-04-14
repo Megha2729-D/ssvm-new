@@ -8,24 +8,41 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
 import { SecurityErrorBoundary, SecurityUtils } from './utils/Security';
 
+/* ✅ 0. AUTO HARD REFRESH ON FIRST LOAD (SAFE - NO LOOP) */
+const handleInitialHardRefresh = () => {
+  const hasRefreshed = sessionStorage.getItem('initial_hard_refresh');
+
+  if (!hasRefreshed) {
+    sessionStorage.setItem('initial_hard_refresh', 'true');
+
+    console.log('Initial load detected → forcing hard refresh...');
+    window.location.reload();
+  }
+};
+
+handleInitialHardRefresh();
+
 /* ✅ 1. VERSION-BASED AUTOMATIC CACHE CLEARING */
-const APP_VERSION = '1.0.5'; // Increment this to force clear cache for all users
+const APP_VERSION = '1.0.5'; // Change this to force update
 
 const handleVersionUpgrade = async () => {
   const savedVersion = localStorage.getItem('ssvm_version');
 
-  // If no version exists, it's a first-time visitor - no need to clear cache
+  // First-time visitor → just store version
   if (!savedVersion) {
     localStorage.setItem('ssvm_version', APP_VERSION);
     return;
   }
 
-  // If version mismatch, perform deep clear and reload
+  // Version changed → clear cache + reload
   if (savedVersion !== APP_VERSION) {
-    console.log(`Update detected: ${savedVersion} -> ${APP_VERSION}. Synchronizing...`);
+    console.log(`Update detected: ${savedVersion} → ${APP_VERSION}. Clearing cache...`);
+
     await SecurityUtils.clearAppCache();
+
     localStorage.setItem('ssvm_version', APP_VERSION);
-    window.location.reload(true);
+
+    window.location.reload();
   }
 };
 
@@ -34,10 +51,12 @@ handleVersionUpgrade();
 /* ✅ 2. PREVENT BACK/FORWARD CACHE ISSUES */
 window.addEventListener('pageshow', (event) => {
   if (event.persisted) {
+    console.log('Page loaded from bfcache → reloading...');
     window.location.reload();
   }
 });
 
+/* ✅ 3. RENDER APP */
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
@@ -48,4 +67,5 @@ root.render(
   </React.StrictMode>
 );
 
+/* ✅ 4. PERFORMANCE LOGGING */
 reportWebVitals();
