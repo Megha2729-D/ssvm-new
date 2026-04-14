@@ -1,0 +1,130 @@
+.archer-wrapper {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* background: url(https://ssvm-main.onrender.com/assets/images/banner-1.webp);
+    background-size: cover;
+    background-position: center; */
+}
+
+.archer-section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.archer-section .lottie-container {
+    width: 100%;
+    max-width: 1400px;
+}
+
+.archer-section .lottie-container svg {
+    width: 100% !important;
+    height: auto !important;
+    display: block;
+}
+
+.archer-text img {
+    width: 300px;
+}
+
+.archer-text {
+    position: absolute;
+    top: 5%;
+    left: 80px;
+    max-width: 420px;
+    opacity: 0;
+    transform: translateY(40px);
+    pointer-events: none;
+}
+
+.archer-text h2 {
+    font-size: 42px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.archer-text p {
+    margin-top: 10px;
+    font-size: 15px;
+    color: #ddd;
+}
+
+/* @media screen and (min-width: 1501px) {
+    .archer-wrapper {
+        position: static !important;
+    }
+} */
+
+/* @media screen and (min-width: 1500px) {
+    .archer-wrapper {
+        position: relative !important;
+    }
+} */
+
+@media screen and (max-width: 991px) {
+    .archery_anim_content {
+        position: relative !important;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .archer-text h2 {
+        text-align: center;
+        font-size: 30px;
+    }
+
+    .archer-text p {
+        text-align: center;
+        color: #ffffff;
+    }
+
+    .archery_main_heading_inner {
+        margin-bottom: 20px;
+    }
+
+    .archery_anim_content {
+        top: 50px !important;
+    }
+
+    .archer-text img {
+        width: 240px;
+    }
+
+    .archer-wrapper {
+        position: relative;
+        min-height: auto;
+        padding: 40px 0;
+        flex-direction: column-reverse;
+    }
+
+    .archer-text {
+        position: relative;
+        padding: 0 15px;
+        top: 0;
+        left: 0;
+        max-width: none;
+        opacity: 1;
+        margin-bottom: 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .archer-section {
+        position: relative;
+        top: 85px;
+    }
+
+    .archer-section .lottie-container {
+        width: 100%;
+    }
+
+    .archery_main_heading {
+        opacity: 1 !important;
+    }
+}
