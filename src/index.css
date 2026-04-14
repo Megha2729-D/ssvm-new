@@ -632,10 +632,6 @@ img {
   object-fit: cover;
 }
 
-.about__content h2 {
-  font-size: 46px;
-}
-
 .about__thumbs .thumb-column-1 {
   gap: 20px;
 }
@@ -1014,6 +1010,15 @@ h2.heading_about {
 }
 
 @media screen and (max-width: 991px) {
+  h2.heading_about {
+    font-size: 34px !important;
+    font-weight: 700;
+  }
+
+  .about_section .about_heading {
+    font-size: 38px;
+  }
+
   .anim_heading {
     column-gap: 20px;
   }
@@ -1062,14 +1067,6 @@ h2.heading_about {
 }
 
 @media screen and (min-width: 1800px) {
-  .top_section .banner_content_parent {
-    padding: 115px 0 50px;
-  }
-
-  /* .banner_content {
-    padding: 300px 0 400px 0;
-  } */
-
   .lottie-container {
     max-width: 100% !important;
   }

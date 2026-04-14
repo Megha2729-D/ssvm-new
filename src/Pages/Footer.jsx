@@ -55,13 +55,7 @@ const Footer = () => {
                             <div className="footer-block text-lg-start text-center">
                                 {/* <img src="./assets/images/logo-white.png" alt="" /> */}
                                 <div className="logo d-flex justify-content-lg-start justify-content-center">
-                                    <video
-                                        src="https://ssvm-main.onrender.com/assets/images/logo-vid.mp4"
-                                        autoPlay
-                                        loop
-                                        muted
-                                        playsInline
-                                    />
+                                    <img src="./assets/images/logo-video.gif" className="logo-video" alt="" />
                                 </div>
                                 <p className="footer-text mt-4">
                                     Stay connected with SSVM Institutions and explore what’s shaping the future of education.

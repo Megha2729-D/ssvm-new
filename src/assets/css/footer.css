@@ -13,6 +13,10 @@
     z-index: 2;
 }
 
+footer .logo-video {
+    height: 125px !important;
+}
+
 /* headings */
 .footer-block .logo {
     height: 140px;

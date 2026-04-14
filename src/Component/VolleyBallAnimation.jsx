@@ -250,14 +250,16 @@ const VolleyBallAnimation = () => {
                         </div>
                         <div className="left_fonder_content col-lg-12 d-flex flex-column align-items-center justify-content-center">
                             <div data-aos="fade-up">
-                                <LetterReveal
+                                <h2 className="main_heading_about">Dr. Manimekalai Mohan</h2>
+                                <h2 className="main_heading_about">Founder, SSVM Institutions</h2>
+                                {/* <LetterReveal
                                     text="Dr. Manimekalai Mohan"
                                     className="main_heading_about"
                                 />
                                 <LetterReveal
                                     text="Founder, SSVM Institutions"
                                     className="main_heading_about"
-                                />
+                                /> */}
                             </div>
                             {/* <ScrollRevealText text="Dr. Manimekalai Mohan" className="reveal_heading" />
                             <ScrollRevealText text="Founder, SSVM Institutions" className="reveal_heading" /> */}

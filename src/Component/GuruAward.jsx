@@ -66,7 +66,7 @@ const GuruAward = () => {
                             <div className="hero-visual">
                                 <article className="orbital-card">
                                     <div className="orbital-card-inner">
-                                        <img src={`${BASE_IMAGE_URL}ssvm-award-1.gif`} className="w-100" alt="" />
+                                        <img src={`${BASE_IMAGE_URL}ssvm-guru-award.gif`} className="w-100" alt="" />
                                     </div>
                                 </article>
                             </div>

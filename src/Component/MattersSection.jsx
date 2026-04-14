@@ -102,7 +102,7 @@ const MattersSection = () => {
             )}
 
             <div className="section_container position-relative" style={{ zIndex: 1 }}>
-                <div className="row justify-content-center mb-lg-5 mb-4">
+                <div className="row justify-content-center mb-lg-5 mb-0">
                     <div className="col-lg-10 text-center">
                         <span className="section-sub-title text-uppercase small fw-bold mb-3 d-block" style={{ color: "#F2FF33" }}>
                             <i className="bi bi-info-circle-fill me-2"></i> Why It Matters
@@ -193,7 +193,7 @@ const MattersSection = () => {
 
                 <div className="row mt-lg-5 mt-4 pt-lg-5 pt-4 justify-content-center">
                     <div className="col-lg-8 col-11 text-center" data-aos="zoom-in">
-                        <TitleReveal
+                        {/* <TitleReveal
                             text="Shape Tomorrow Through"
                             className="fw-bold"
                             style={{
@@ -212,13 +212,13 @@ const MattersSection = () => {
                                 letterSpacing: "2px"
                             }}
                             triggerRef={sectionRef}
-                        />
-                        <div className="p-lg-4 p-3 rounded-4" style={{
+                        /> */}
+                        <div className="p-lg-4 p-3 mt-4 rounded-4" style={{
                             borderLeft: "4px solid #F2FF33",
                             background: "rgba(242,255,51,0.05)",
                             textAlign: "center"
                         }}>
-                            <p>
+                            <p className="text-white mb-0">
                                 If students are expected to shape the future, they need platforms that treat them like they already can.
                             </p>
                             {/* <TitleReveal

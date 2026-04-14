@@ -89,14 +89,7 @@ const Navbar = () => {
 
                     {/* LEFT LOGO */}
                     <div className="logo left_logo">
-                        <video
-                            src={`${BASE_IMAGE_URL}logo-vid.mp4`}
-                            autoPlay
-                            loop
-                            muted
-                            playsInline
-                            className="logo-video"
-                        />
+                        <img src="./assets/images/logo-video.gif" className="logo-video" alt="" />
                     </div>
 
                     {/* DESKTOP NAV */}
