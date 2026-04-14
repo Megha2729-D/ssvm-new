@@ -18,6 +18,7 @@ import SportsAnimation from "../Component/SportsAnimation";
 import VolleyBallAnimation from "../Component/VolleyBallAnimation";
 import HorseAnimation from "../Component/HorseAnimation";
 import ArcherScrollAnimation from "../Component/ArcherScrollAnimation";
+import GuruAward from "../Component/GuruAward";
 import SpeakerSwiper from "../Component/SpeakerSwiper";
 import CycleAnimation from "../Component/CycyleAnimation";
 
@@ -345,13 +346,13 @@ const Homepage = () => {
                     <div className="marquee-inner">
                         <h2 className="event-strip">
                             <span>September</span>
-                            <span className="lit">1, 2 & 3</span>
+                            <span className="lit">2026</span>
                             <span>Location: </span>
                             <span className="lit">SSVM World School, Coimbatore</span>
                             <span className="divider">|</span>
 
                             <span>September</span>
-                            <span className="lit">1, 2 & 3</span>
+                            <span className="lit">2026</span>
                             <span>Location: </span>
                             <span className="lit">SSVM World School, Coimbatore</span>
                             <span className="divider">|</span>
@@ -366,6 +367,7 @@ const Homepage = () => {
                 <SpeakerSwiper />
             </div> */}
             <ArcherScrollAnimation />
+            <GuruAward />
             {/* <section className="pt-5 features_section">
                 <div className="features_content">
                     <div className="section_container">

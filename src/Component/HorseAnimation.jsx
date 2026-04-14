@@ -123,7 +123,7 @@ const HorseAnimation = () => {
                                                     <div>
                                                         <span className="section-sub-title text-uppercase small text-black fw-bold">
                                                             <img src={`${BASE_IMAGE_URL}favicon.png`} alt="" />
-                                                            SSVM Conclave
+                                                            SSVM Transforming India Conclave 2026
                                                         </span>
                                                         <ScrollRevealText text="Flex Your Future – Creating Our World Today" className="reveal_heading" />
                                                         <p className="fw-bold">The SSVM Transforming India Conclave is not just an event—it’s a movement.</p>

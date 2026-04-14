@@ -226,7 +226,7 @@ const VolleyBallAnimation = () => {
                 {/* Middle Text */}
                 <div ref={middleTextRef} className="middle-text">
                     <LetterReveal
-                        text="Transforming"
+                        text="Ssvm Transforming"
                         className="heading_about main_heading_about"
                     /><LetterReveal
                         text="India Conclave"
@@ -236,7 +236,7 @@ const VolleyBallAnimation = () => {
                         className="heading_about main_heading_about"
                     />
 
-                    {/* <ScrollRevealText text="Transforming" className="reveal_heading" />
+                    {/* <ScrollRevealText text="Ssvm Transforming" className="reveal_heading" />
                     <ScrollRevealText text="India Conclave" className="reveal_heading" />
                     <ScrollRevealText text="2026" className="reveal_heading" /> */}
                 </div>
@@ -246,7 +246,7 @@ const VolleyBallAnimation = () => {
                     <div className="row justify-content-center">
 
                         <div className="col-lg-6">
-                            <img src="./assets/images/founder-2.gif" data-aos="zoom-in" data-aos-delay="100" className="w-100" alt="" />
+                            <img src="./assets/images/ssvm-founder-anim.gif" data-aos="zoom-in" data-aos-delay="100" className="w-100" alt="" />
                         </div>
                         <div className="left_fonder_content col-lg-12 d-flex flex-column align-items-center justify-content-center">
                             <LetterReveal

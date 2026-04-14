@@ -34,6 +34,10 @@ section {
   overflow: hidden;
 }
 
+.section-sub-title img {
+  height: 35px;
+}
+
 h1,
 .h1,
 h2,
@@ -316,7 +320,6 @@ img {
   font-size: 15px;
   font-weight: bold;
   /* font-family: "Sneaker", sans-serif; */
-  text-transform: capitalize;
   text-align: center;
 }
 

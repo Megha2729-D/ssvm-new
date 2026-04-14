@@ -137,7 +137,7 @@ const ArcherScrollAnimation = () => {
                     <img src={`${BASE_IMAGE_URL}favicon.png`} alt="" />
                     Awards
                 </span>
-                <ScrollRevealText text="Recognising True Excellence" className="reveal_heading" />
+                <ScrollRevealText text="Recognising True Excellence" className="reveal_heading mt-2" />
             </div>
             <div className="w-100">
                 <div className="archer-section">
@@ -146,7 +146,7 @@ const ArcherScrollAnimation = () => {
 
                 <div className="archery_anim_content">
                     <div ref={textRef} className="archer-text">
-                        <img src="./assets/images/ssvm-student-award.gif" alt="" />
+                        <img src={`${BASE_IMAGE_URL}ssvm-student-award.gif`} alt="" />
                         <ScrollRevealText text="Studentpreneur Awards 2026" className="reveal_heading" />
                         <p>The Studentpreneur Awards is an initiative that encourages students to start thinking and acting like entrepreneurs early. It gives them a platform to showcase ideas they are actively working on and motivates them to take action instead of just thinking. The goal is to build confidence, real-world skills, and a mindset of creating and solving problems from a young age.</p>
                     </div>

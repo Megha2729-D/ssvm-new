@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import TitleReveal from "./TitleReveal";
+import "../assets/css/matters.css"
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -110,7 +111,6 @@ const MattersSection = () => {
                             text="Why This Conclave"
                             className="heading_about text-white mb-lg-4 mb-3"
                             style={{
-                                fontSize: "clamp(2rem, 5vw, 4rem)",
                                 textAlign: "center",
                                 display: "block"
                             }}
@@ -120,7 +120,6 @@ const MattersSection = () => {
                             text=" Matters"
                             className="heading_about text-white mb-lg-4 mb-3"
                             style={{
-                                fontSize: "clamp(2rem, 5vw, 4rem)",
                                 textAlign: "center",
                                 display: "block"
                             }}

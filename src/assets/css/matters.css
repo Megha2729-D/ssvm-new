@@ -1,0 +1,9 @@
+.matters_section h2 {
+    font-size: 32px;
+}
+
+@media screen and (max-width: 991px) {
+    .matters_section h2 {
+        font-size: 22px !important; 
+    }
+}
