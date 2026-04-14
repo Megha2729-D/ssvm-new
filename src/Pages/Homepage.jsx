@@ -454,7 +454,7 @@ const Homepage = () => {
                     </div>
                 </div>
             </section> */}
-            <section className="about_section">
+            {/* <section className="about_section">
                 <div className="section_container text-white py-5">
                     <div className="row g-4 py-5 justify-content-center align-items-stretch">
                         <div className="col-xl-6">
@@ -478,7 +478,7 @@ const Homepage = () => {
                         <div className="col-xl-5 d-flex align-items-center">
                             <div className="about__thumbs" data-aos="zoom-in">
                                 <img src="https://ssvm-2o-d4pw.vercel.app/_next/image?url=https%3A%2F%2Fssvmtransformationindia.s3.ap-south-1.amazonaws.com%2Fimages%2Fabout.jpg&w=640&q=75" className="w-100 rounded-3" alt="" />
-                                {/* <div className="thumb-column thumb-column-1">
+                              <div className="thumb-column thumb-column-1">
                                     <div className="thumb-1 h-100 thumb bounce-y-down">
                                         <img
                                             src={`${BASE_IMAGE_URL}about1.jpeg`}
@@ -503,7 +503,50 @@ const Homepage = () => {
                                             className="w-100"
                                         />
                                     </div>
-                                </div> */}
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section> */}
+            <section className="about_section">
+                <div className="section_container text-white py-5">
+                    <div className="about_box">
+                        <div className="row g-4 align-items-center">
+
+                            {/* LEFT */}
+                            <div className="col-xl-6 d-flex align-items-center">
+                                <div className="about__image">
+                                    <img
+                                        src="https://ssvm-2o-d4pw.vercel.app/_next/image?url=https%3A%2F%2Fssvmtransformationindia.s3.ap-south-1.amazonaws.com%2Fimages%2Fabout.jpg&w=640&q=75"
+                                        alt=""
+                                    />
+                                </div>
+                            </div>
+
+                            {/* RIGHT */}
+
+                            <div className="col-xl-6">
+                                <div className="about__content ps-4">
+
+                                    <span className="section-sub-title">
+                                        <img src={`${BASE_IMAGE_URL}favicon.png`} alt="" />
+                                        About Us
+                                    </span>
+
+                                    <h2 className="about_heading">
+                                        About <span>SSVM Institutions</span>
+                                    </h2>
+
+                                    <p className="mt-4">
+                                        SSVM Institutions have consistently stood at the intersection of academic excellence and future-focused education. With a strong belief that education must extend beyond classrooms, SSVM has built a culture that nurtures curiosity, leadership, and real-world thinking.
+                                    </p>
+
+                                    <p>
+                                        Across campuses, the focus has always been clear: shape individuals who don’t just succeed in exams, but thrive in life. From entrepreneurship and innovation to sports and holistic development, SSVM students are encouraged to explore, experiment, and evolve.
+                                    </p>
+
+                                </div>
                             </div>
                         </div>
                     </div>
