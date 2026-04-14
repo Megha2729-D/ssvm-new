@@ -509,7 +509,7 @@ const Homepage = () => {
                     </div>
                 </div>
             </section> */}
-            <section className="about_section">
+            <section className="about_section py-3">
                 <div className="section_container text-white py-5">
                     <div className="about_box">
                         <div className="row g-4 align-items-center">
@@ -534,9 +534,11 @@ const Homepage = () => {
                                         About Us
                                     </span>
 
-                                    <h2 className="about_heading">
-                                        About <span>SSVM Institutions</span>
-                                    </h2>
+                                    <div data-aos="fade-up">
+                                        <h2 className="about_heading">
+                                            About <span>SSVM Institutions</span>
+                                        </h2>
+                                    </div>
 
                                     <p className="mt-4">
                                         SSVM Institutions have consistently stood at the intersection of academic excellence and future-focused education. With a strong belief that education must extend beyond classrooms, SSVM has built a culture that nurtures curiosity, leadership, and real-world thinking.
@@ -553,14 +555,16 @@ const Homepage = () => {
                 </div>
             </section>
             <section>
-                <div className="py-4 media_coverage">
-                    <LetterReveal text="Media Coverage" className="heading_about text-center text-white small_sm_abt_heading" />
+                <div className="pb-4 media_coverage">
+                    <div data-aos="fade-up" data-aos-delay="200">
+                        <LetterReveal text="Media Coverage" className="heading_about text-center text-white small_sm_abt_heading" />
+                    </div>
                     <div className="pt-4">
                         <Swiper
                             modules={[Autoplay, FreeMode]}
                             loop={true}
                             freeMode={true}
-                            speed={4000}              // control flow speed
+                            speed={4000}
                             autoplay={{
                                 delay: 0,               // no pause
                                 disableOnInteraction: false,
@@ -588,7 +592,7 @@ const Homepage = () => {
                                     slidesPerView: 6,
                                 },
                             }}
-                            spaceBetween={30}
+                            spaceBetween={50}
                             allowTouchMove={false}
                         >
                             {slides.map((item) => (
@@ -603,8 +607,10 @@ const Homepage = () => {
                 </div>
             </section>
             <section>
-                <div className="py-4 section_container">
-                    <LetterReveal text="Past Edition Highlights" className="heading_about text-center text-white small_sm_abt_heading" />
+                <div className="py-5 section_container">
+                    <div data-aos="fade-up" data-aos-delay="200">
+                        <LetterReveal text="Past Edition Highlights" className="heading_about text-center text-white small_sm_abt_heading" />
+                    </div>
                     <div className="row g-4 mt-4">
                         {videos.map((id, i) => (
                             <div className="col-md-4 my-4" key={i}>

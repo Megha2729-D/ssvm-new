@@ -78,7 +78,7 @@ const HorseAnimation = () => {
 
             // Content animation
             const screenWidth = window.innerWidth;
-            const startX = screenWidth >= 2000 ? -5000 : -2000;
+            const startX = screenWidth >= 2000 ? -8000 : -2000;
 
             tl.fromTo(
                 contentRef.current,
@@ -125,7 +125,9 @@ const HorseAnimation = () => {
                                                             <img src={`${BASE_IMAGE_URL}favicon.png`} alt="" />
                                                             SSVM Transforming India Conclave 2026
                                                         </span>
-                                                        <ScrollRevealText text="Flex Your Future – Creating Our World Today" className="reveal_heading" />
+                                                        <div data-aos="fade-up">
+                                                            <ScrollRevealText text="Flex Your Future – Creating Our World Today" className="reveal_heading" />
+                                                        </div>
                                                         <p className="fw-bold">The SSVM Transforming India Conclave is not just an event—it’s a movement.</p>
                                                         <p>
                                                             Over the past four years, the conclave has grown into a powerful platform where ideas meet action. Each year, under a new theme, it has brought together students, educators, entrepreneurs, and change-makers to engage in conversations that truly matter.

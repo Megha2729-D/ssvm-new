@@ -249,14 +249,16 @@ const VolleyBallAnimation = () => {
                             <img src="./assets/images/ssvm-founder-anim.gif" data-aos="zoom-in" data-aos-delay="100" className="w-100" alt="" />
                         </div>
                         <div className="left_fonder_content col-lg-12 d-flex flex-column align-items-center justify-content-center">
-                            <LetterReveal
-                                text="Dr. Manimekalai Mohan"
-                                className="main_heading_about"
-                            />
-                            <LetterReveal
-                                text="Founder, SSVM Institutions"
-                                className="main_heading_about"
-                            />
+                            <div data-aos="fade-up">
+                                <LetterReveal
+                                    text="Dr. Manimekalai Mohan"
+                                    className="main_heading_about"
+                                />
+                                <LetterReveal
+                                    text="Founder, SSVM Institutions"
+                                    className="main_heading_about"
+                                />
+                            </div>
                             {/* <ScrollRevealText text="Dr. Manimekalai Mohan" className="reveal_heading" />
                             <ScrollRevealText text="Founder, SSVM Institutions" className="reveal_heading" /> */}
                         </div>

@@ -291,7 +291,8 @@ img {
   will-change: transform;
   /* color: #ce2239; */
   color: var(--c1);
-  font-size: 130px;
+  font-size: 42px !important;
+  font-weight: 700;
   text-shadow: 0 0 15px #000000;
   /* text-shadow: 0 0 15px #f5ff5d; */
 }
@@ -804,7 +805,6 @@ img {
 /* ===== ABOUT SECTION ===== */
 .about_section .about_box {
   position: relative;
-  padding: 2.5rem;
   /* border-radius: 2rem;
   background: radial-gradient(circle at top left, #141414e6, #0a0a0ab3);
   border: 1px solid #5f615c4d;
@@ -843,7 +843,8 @@ img {
 
 /* HEADING */
 .about_section .about_heading {
-  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  font-size: 42px;
+  font-weight: 700;
   margin-bottom: 1rem;
   position: relative;
 }
@@ -923,21 +924,26 @@ img {
   transition-timing-function: linear !important;
 }
 
-/* .media_coverage .swiper-wrapper img{
-  
-} */
+h2.heading_about {
+  font-size: 42px !important;
+  font-weight: 700;
+}
+
 .media_coverage .slide-card {
   width: 100%;
-  height: 220px;
+  height: fit-content;
   overflow: hidden;
   border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #ffffff;
+  padding: 10px;
 }
 
 .media_coverage .slide-card img {
   height: 100px;
-  width: 200px;
-  border-radius: 12px;
-  background: #ffffff;
+  width: 100px;
   object-fit: contain;
   display: block;
 }
@@ -1060,9 +1066,9 @@ img {
     padding: 115px 0 50px;
   }
 
-  .banner_content {
+  /* .banner_content {
     padding: 300px 0 400px 0;
-  }
+  } */
 
   .lottie-container {
     max-width: 100% !important;
@@ -1078,11 +1084,11 @@ img {
   }
 
   .archer-text img {
-    width: 800px !important;
+    width: 300px !important;
   }
 
   .left_fonder_content h2 {
-    font-size: 70px !important;
+    font-size: 40px !important;
   }
 
   .left_fonder_content h2:last-child {
@@ -1090,18 +1096,18 @@ img {
   }
 
   .archer-text {
-    max-width: 100% !important;
-    top: 40% !important;
-    max-width: 100% !important;
+    max-width: 36% !important;
+    bottom: 30% !important;
+    top: auto !important;
   }
 
   .archer-text h2 {
-    font-size: 75px !important;
+    font-size: 40px !important;
     margin-top: 20px;
   }
 
   .archer-text p {
-    font-size: 45px !important;
+    font-size: 20px !important;
   }
 
   .features_section::before {

@@ -17,27 +17,25 @@ const GuruAward = () => {
                                 <div className="eyebrow">
                                     <span className="section-sub-title text-uppercase fw-bold">
                                         <img src={`${BASE_IMAGE_URL}favicon.png`} alt="" />
-                                        Inspirational Guru Awards
+                                        Celebrating Excellence
                                     </span>
                                     {/* <span className="eyebrow-dot"></span>
                                     <span>Inspirational Guru Awards</span> */}
                                 </div>
 
-                                <div>
+                                <div data-aos="fade-up">
                                     <TitleReveal
-                                        text="Honouring educators"
+                                        text="Inspirational Guru"
                                         className="heading_about text-white "
                                         style={{
-                                            fontSize: "35px",
                                             textAlign: "start",
                                             display: "block",
                                         }}
                                     />
                                     <TitleReveal
-                                        text="who shape lives"
+                                        text="Awards"
                                         className="heading_about text-white "
                                         style={{
-                                            fontSize: "35px",
                                             textAlign: "start",
                                             display: "block",
                                         }}

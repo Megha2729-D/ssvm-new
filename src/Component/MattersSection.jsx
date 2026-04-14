@@ -75,7 +75,7 @@ const MattersSection = () => {
     return (
         <section
             ref={sectionRef}
-            className="matters_section py-lg-5 py-4 position-relative overflow-hidden"
+            className="matters_section py-4 position-relative overflow-hidden"
             style={{
                 // backgroundColor: "#0e0e0e",
                 minHeight: isMobile ? "auto" : "100vh",
@@ -109,7 +109,7 @@ const MattersSection = () => {
                         </span>
                         <TitleReveal
                             text="Why This Conclave"
-                            className="heading_about text-white mb-lg-4 mb-3"
+                            className="heading_about text-white"
                             style={{
                                 textAlign: "center",
                                 display: "block"
@@ -118,7 +118,7 @@ const MattersSection = () => {
                         />
                         <TitleReveal
                             text=" Matters"
-                            className="heading_about text-white mb-lg-4 mb-3"
+                            className="heading_about text-white"
                             style={{
                                 textAlign: "center",
                                 display: "block"
@@ -195,7 +195,7 @@ const MattersSection = () => {
                     <div className="col-lg-8 col-11 text-center" data-aos="zoom-in">
                         <TitleReveal
                             text="Shape Tomorrow Through"
-                            className="mb-4 fw-bold"
+                            className="fw-bold"
                             style={{
                                 fontSize: isMobile ? "1.5rem" : "2.5rem",
                                 color: "#F2FF33",
@@ -218,7 +218,10 @@ const MattersSection = () => {
                             background: "rgba(242,255,51,0.05)",
                             textAlign: "center"
                         }}>
-                            <TitleReveal
+                            <p>
+                                If students are expected to shape the future, they need platforms that treat them like they already can.
+                            </p>
+                            {/* <TitleReveal
                                 text="If students are expected to shape the future, they need platforms that treat them like they already can."
                                 className="m-0 text-white italic"
                                 style={{
@@ -229,7 +232,7 @@ const MattersSection = () => {
                                     fontWeight: "normal"
                                 }}
                                 triggerRef={sectionRef}
-                            />
+                            /> */}
                         </div>
                     </div>
                 </div>

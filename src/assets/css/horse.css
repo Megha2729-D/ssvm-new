@@ -62,6 +62,7 @@
     text-align: center;
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 /* .missin_inner_part::before {
@@ -99,7 +100,8 @@
 }
 
 .missin_inner_part h2 {
-    font-size: 40px !important;
+    font-size: 42px !important;
+    font-weight: 700;
 }
 
 .mission-box {
@@ -196,6 +198,7 @@
 
 @media screen and (min-width: 1400px) {
     .missin_inner_part::before {
-        height: 255% !important;
+        height: 110% !important;
+        width: 100% !important;
     }
 }

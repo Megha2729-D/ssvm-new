@@ -61,7 +61,10 @@
 }
 
 .bottom-text h2.heading_about {
-    font-size: 45px !important;
+    font-size: 42px !important;
+    font-weight: 700;
+    line-height: 38px;
+
 }
 
 .volleyball_anim_content h2.heading_about {
