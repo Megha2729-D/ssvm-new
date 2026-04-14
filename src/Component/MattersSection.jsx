@@ -196,7 +196,7 @@ const MattersSection = () => {
                     <div className="col-lg-8 col-11 text-center" data-aos="zoom-in">
                         <TitleReveal
                             text="Shape Tomorrow Through"
-                            className="mb-4 fw-bold text-uppercase"
+                            className="mb-4 fw-bold"
                             style={{
                                 fontSize: isMobile ? "1.5rem" : "2.5rem",
                                 color: "#F2FF33",
@@ -206,7 +206,7 @@ const MattersSection = () => {
                         />
                         <TitleReveal
                             text=" Action"
-                            className="mb-4 fw-bold text-uppercase"
+                            className="mb-4 fw-bold"
                             style={{
                                 fontSize: isMobile ? "1.5rem" : "2.5rem",
                                 color: "#F2FF33",
