@@ -3,10 +3,15 @@ import CustomCursor from "../Component/Cursor";
 import TextReveal from "../Component/TextReveal";
 import TextRevealSample from "../Component/sample";
 import { Autoplay, FreeMode } from "swiper/modules";
-import gsap from "gsap";
-import ScrollTrigger from "gsap/ScrollTrigger";
 
 import LetterReveal from "../Component/LetterReveal";
+import MattersSection from "../Component/MattersSection";
+
+// import BasketBallAnimation from "../Component/BasketBallAnimation"
+// import BasketBallAnimation1 from "../Component/BasketBallAnimation1"
+// import RunnerStickerAnimation from "../Component/RunnerStickerAnimation"
+// import RunnerStickerAnimation2 from "../Component/RunnerStickerAnimation2"
+
 import FencingStickerAnimation from "../Component/FencingStickerAnimation"
 import ScrollRevealText from "../Component/ScrollRevealText";
 import SportsAnimation from "../Component/SportsAnimation";
@@ -15,17 +20,17 @@ import HorseAnimation from "../Component/HorseAnimation";
 import ArcherScrollAnimation from "../Component/ArcherScrollAnimation";
 import SpeakerSwiper from "../Component/SpeakerSwiper";
 import CycleAnimation from "../Component/CycyleAnimation";
+
+
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/effect-cards";
-
-gsap.registerPlugin(ScrollTrigger);
-
 const BASE_IMAGE_URL = "https://ssvm-main.onrender.com/assets/images/"
 const images = [
     // "https://ssvm-main.onrender.com/assets/images/banner/image-1.jpg",
@@ -161,44 +166,9 @@ const Homepage = () => {
         if (window.innerWidth < 768) setIsMobile(true);
     }, []);
 
-    // Robust Layout Initialization
+    // AOS init
     useEffect(() => {
-        const refreshLayout = () => {
-            console.log("Synchronizing layout...");
-            ScrollTrigger.refresh();
-            AOS.refresh();
-        };
-
-        // 1. Initial refresh after a small delay (DOM settle)
-        const settleTimer = setTimeout(refreshLayout, 500);
-
-        // 2. Refresh after all fonts are ready (prevents layout shift from text)
-        if (document.fonts) {
-            document.fonts.ready.then(refreshLayout);
-        }
-
-        // 3. Refresh when images load
-        const images = document.querySelectorAll('img');
-        images.forEach(img => {
-            if (img.complete) return;
-            img.addEventListener('load', refreshLayout);
-        });
-
-        // 4. Global Load Listener
-        window.addEventListener('load', refreshLayout);
-
-        // 5. Initial AOS init
-        AOS.init({
-            duration: 1000,
-            once: false,
-            easing: "ease-in-out",
-            offset: 100
-        });
-
-        return () => {
-            clearTimeout(settleTimer);
-            window.removeEventListener('load', refreshLayout);
-        };
+        AOS.init({ duration: 1000, once: false, easing: "ease-in-out" });
     }, []);
 
     // Mobile card fly-in
@@ -392,12 +362,11 @@ const Homepage = () => {
                 </div>
             </section>
             <HorseAnimation />
-            <div className="position-relative " id="speakers">
+            {/* <div className="position-relative " id="speakers">
                 <SpeakerSwiper />
-                {/* <ParallaxSlider /> */}
-            </div>
+            </div> */}
             <ArcherScrollAnimation />
-            <section className="pt-5 features_section">
+            {/* <section className="pt-5 features_section">
                 <div className="features_content">
                     <div className="section_container">
                         <div className="features_header">
@@ -414,7 +383,7 @@ const Homepage = () => {
                                         style={{ opacity: "1" }} alt="" className="hero_bam-dunk bam-glitch glitching" />
                                 </div>
                             </div>
-                            <div className="col-lg-9 d-flex align-items-center">
+                            <div className="col-lg-9 d-flex align-items-center mt-4 mt-lg-0">
                                 <div>
                                     <div className="row column-gap-5">
                                         <div className="col-lg-3 col-6 d-flex flex-column justify-content-center align-items-center" data-aos="zoom-in">
@@ -455,7 +424,7 @@ const Homepage = () => {
                         </div>
                     </div>
                 </div>
-            </section>
+            </section> */}
             {/* <CycleAnimation /> */}
             {/* <section className="pt-5 features_section">
                 <div className="features_content">
@@ -609,6 +578,7 @@ const Homepage = () => {
                     </div>
                 </div>
             </section>
+            <MattersSection />
             <Footer />
         </>
     );

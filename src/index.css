@@ -30,11 +30,6 @@
   color: var(--c1);
 }
 
-body {
-  /* background-color: #0e0e0e !important; */
-  overflow-x: hidden;
-}
-
 section {
   overflow: hidden;
 }
@@ -58,6 +53,12 @@ button {
 body {
   font-family: var(--body-font) !important;
   color: #000000;
+  overflow-x: hidden !important;
+  background: linear-gradient(#0e0e0eab, #0e0e0eab), url(https://ssvm-main.onrender.com/assets/images/banner.png);
+  background-size: cover;
+  background-attachment: fixed;
+  height: 100%;
+  width: 100%;
 }
 
 ::selection {
@@ -235,13 +236,6 @@ img {
   z-index: 2;
 } */
 
-body {
-  background: linear-gradient(#3d3d3d38, #3d3d3d38), url(https://ssvm-main.onrender.com/assets/images/banner.png);
-  background-size: cover;
-  background-attachment: fixed;
-  height: 100%;
-  width: 100%;
-}
 
 /* .top_section {
   background: url(https://ssvm-main.onrender.com/assets/images/banner.png);
@@ -755,13 +749,12 @@ body {
 /* .features_section::before {
   content: "";
   position: absolute;
-  width: 110%;
-  height: 100%;
+  width: 27.5vw;
+  height: 245px;
   background: #f2ff33;
-  border-radius: 50%;
-  top: 0;
-  left: -50px;
-  transform: rotate(20deg);
+  border-radius: 0 0 145px 260px;
+  top: -155px;
+  right: -8px;
 } */
 
 .features_content {
@@ -941,7 +934,7 @@ body {
   }
 }
 
-@media screen and (min-width: 2000px) {
+@media screen and (min-width: 1800px) {
   .top_section .banner_content_parent {
     padding: 115px 0 50px;
   }
@@ -989,4 +982,13 @@ body {
   .archer-text p {
     font-size: 45px !important;
   }
+
+  .features_section::before {
+    /* width: 457px; */
+    height: 200px;
+    border-radius: 0 0 185px 240px;
+    top: -100px !important;
+    right: -10px;
+  }
+
 }
