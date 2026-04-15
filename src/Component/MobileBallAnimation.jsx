@@ -53,8 +53,8 @@ const MobileBallAnimation = () => {
 
             tl.fromTo(bgRevealRef.current,
                 { clipPath: "circle(0% at 50% 50%)" },
-                { clipPath: "circle(150% at 50% 50%)", duration: 2 },
-                0
+                { clipPath: "circle(150% at 50% 50%)", duration: 5 },
+                -0.5
             );
 
             // =========================
@@ -67,7 +67,7 @@ const MobileBallAnimation = () => {
                     const frame = progress * (totalFrames - 1);
                     anim.goToAndStop(frame, true);
                 }
-            }, 2);
+            }, 0.5);
 
             // =========================
             // ✨ PHASE 3: TEXT REVEAL (65 → 80%)
@@ -157,7 +157,7 @@ const MobileBallAnimation = () => {
                         </div>
 
                         <div className="founder-reveal-item left_fonder_content ">
-                            <img src="/assets/images/ssvm-founder-anim.gif" style={{ width: 160 }} />
+                            <img src="/assets/images/ssvm-founder-anim.gif" className="w-75" />
                             <h2 className="main_heading_about fw-bold mt-2 text-black">Dr. Manimekalai Mohan</h2>
                             <h2 className="main_heading_about text-black">Founder, SSVM Institutions</h2>
                         </div>
