@@ -1,6 +1,6 @@
 .site-footer {
-    background: #ffffff;
-    color: #000000;
+    background: #0000003d;
+    color: #ffffff;
     padding: 80px 20px 60px;
     position: relative;
     width: 95%;
@@ -26,13 +26,13 @@ footer .logo-video {
     font-size: 35px;
     font-weight: bolder;
     margin-bottom: 18px;
-    color: #000000;
+    color: #ffffff;
 }
 
 /* text */
 .footer-text {
     font-size: 14px;
-    color: #000000;
+    color: #ffffff;
     line-height: 1.7;
     margin-bottom: 20px;
 }
@@ -41,14 +41,14 @@ footer .logo-video {
 .footer-block p,
 .footer-block a {
     font-size: 16px;
-    color: #000000;
+    color: #ffffff;
     text-decoration: none;
     line-height: 1.8;
     transition: 0.3s all ease-out;
 }
 
 .footer-block a:hover {
-    color: #000000;
+    color: #f2ff33;
     letter-spacing: 0.5px;
     font-weight: bold;
     transition: 0.3s all ease-out;

@@ -244,6 +244,10 @@
     box-shadow: 0 10px 30px #f2ff3333;
 }
 
+.hero-actions .small {
+    font-size: 12px;
+}
+
 /* ===== RESPONSIVE ===== */
 @media (max-width: 900px) {
     .guru_award_parent .hero {
@@ -260,6 +264,13 @@
     }
 
     .guru_award_parent h2 {
-        font-size: 32px !important;
+        font-size: 23px !important;
+        margin-bottom: 20px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .guru_award_parent h2 {
+        font-size: 20px !important;
     }
 }

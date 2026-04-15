@@ -92,7 +92,9 @@ const ArcherScrollAnimation = () => {
                 animationRef.current.destroy();
             }
 
-            ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+            return () => {
+    if (animationRef.current) animationRef.current.destroy();
+};
 
         };
 

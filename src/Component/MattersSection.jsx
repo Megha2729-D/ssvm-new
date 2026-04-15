@@ -141,7 +141,7 @@ const MattersSection = () => {
                 <div ref={containerRef} className="row g-lg-4 g-3 mt-lg-5 mt-2 justify-content-center">
                     {values.map((item, index) => (
                         <div key={index} className="col-lg-3 col-md-6 col-11">
-                            <div className="matter-card h-100 p-lg-4 p-4" style={{
+                            <div className="matter-card h-100 p-lg-4 p-4" data-aos="fade-up" style={{
                                 background: "rgba(255,255,255,0.03)",
                                 border: `1px solid ${index % 2 === 0 ? "rgba(242,255,51,0.2)" : "rgba(255,255,255,0.1)"}`,
                                 borderRadius: "24px",

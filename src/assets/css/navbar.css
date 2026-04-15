@@ -43,11 +43,11 @@ nav {
 }
 
 .logo-video {
-    height: 95px;
+    height: 85px;
 }
 
 .initiative_logo {
-    height: 60px;
+    height: 55px;
 }
 
 .logo {
@@ -66,13 +66,13 @@ nav {
     color: #000000;
     list-style: none;
     font-weight: 600;
-    letter-spacing: 1px;
+    letter-spacing: 0px;
     cursor: pointer;
 }
 
 .nav-item {
     font-weight: bold;
-    font-size: 16px;
+    font-size: 15px;
     cursor: pointer;
     overflow: hidden;
 }
@@ -101,7 +101,7 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 15px 20px;
+    padding: 0 20px;
 }
 
 /* RIGHT AREA */

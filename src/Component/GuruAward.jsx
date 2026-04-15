@@ -40,26 +40,27 @@ const GuruAward = () => {
                                             display: "block",
                                         }}
                                     />
+
+                                    <div className="mt-3">
+                                        <p className="hero-subtitle">
+                                            While students are the future, educators are the force shaping that future.
+                                        </p>
+                                        <p className="hero-subtitle">
+                                            The Inspirational Guru Awards honour educators who go beyond teaching subjects—and instead shape mindsets, character, and confidence.
+                                        </p>
+                                        <p className="hero-subtitle">
+
+                                            These are mentors who:
+                                        </p>
+
+                                        <ul>
+                                            <li>Inspire action, not just understanding</li>
+                                            <li>Build resilience, not just knowledge</li>
+                                            <li>Influence lives far beyond classrooms</li>
+                                        </ul>
+                                    </div>
                                 </div>
 
-                                <div>
-                                    <p className="hero-subtitle">
-                                        While students are the future, educators are the force shaping that future.
-                                    </p>
-                                    <p className="hero-subtitle">
-                                        The Inspirational Guru Awards honour educators who go beyond teaching subjects—and instead shape mindsets, character, and confidence.
-                                    </p>
-                                    <p className="hero-subtitle">
-
-                                        These are mentors who:
-                                    </p>
-
-                                    <ul>
-                                        <li>Inspire action, not just understanding</li>
-                                        <li>Build resilience, not just knowledge</li>
-                                        <li>Influence lives far beyond classrooms</li>
-                                    </ul>
-                                </div>
                             </div>
                         </div>
                         <div className="col-lg-5">
@@ -73,15 +74,37 @@ const GuruAward = () => {
                         </div>
                         <div className="col-lg-12 mt-4">
                             <div className="hero-actions d-flex justify-content-between w-100">
-                                <button className="btn-primary">
-                                    <span>Register – Internal (SSVM)</span>
-                                </button>
-
-                                <button className="btn-ghost">
-                                    <span>Register – External</span>
-                                </button>
+                                <div className="d-flex flex-column align-items-center justify-content-center">
+                                    <button className="btn-primary">
+                                        <span>Register – Internal</span>
+                                    </button>
+                                    <p className="mt-3 text-white text-center small">Internal Category – Open to students from SSVM Institutions</p>
+                                </div>
+                                <div className="d-flex flex-column align-items-center justify-content-center">
+                                    <button className="btn-ghost">
+                                        <span>Register – External</span>
+                                    </button>
+                                    <p className="mt-3 text-white text-center small">External Category – Open to students from other schools and institutions</p>
+                                </div>
                             </div>
                         </div>
+                        {/* <div className="col-lg-12 mt-4">
+                            <div className="hero-actions d-flex justify-content-between w-100 gap-3">
+                                <div>
+                                    <button className="btn-primary">
+                                        <span>Register – Internal</span>
+                                    </button>
+                                    <p className="text-white small">Internal Category – Open to students from SSVM Institutions</p>
+                                </div>
+
+                                <div>
+                                    <button className="btn-ghost">
+                                        <span>Register – External</span>
+                                    </button>
+                                    <p className="text-white small">External Category – Open to students from other schools and institutions</p>
+                                </div>
+                            </div>
+                        </div> */}
                     </div>
                     {/* LEFT: TEXT */}
                 </div>

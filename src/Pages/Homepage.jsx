@@ -16,9 +16,13 @@ import FencingStickerAnimation from "../Component/FencingStickerAnimation"
 import ScrollRevealText from "../Component/ScrollRevealText";
 import SportsAnimation from "../Component/SportsAnimation";
 import VolleyBallAnimation from "../Component/VolleyBallAnimation";
+import MobileBallAnimation from "../Component/MobileBallAnimation";
+
 import HorseAnimation from "../Component/HorseAnimation";
 import ArcherScrollAnimation from "../Component/ArcherScrollAnimation";
 import GuruAward from "../Component/GuruAward";
+
+import GuruAwardAnimation from "../Component/GuruAwardAnimation";
 import SpeakerSwiper from "../Component/SpeakerSwiper";
 import CycleAnimation from "../Component/CycyleAnimation";
 
@@ -277,7 +281,7 @@ const Homepage = () => {
                             <div className="row justify-content-center pb-4">
                                 <div className="col-lg-8">
                                     <div className="row justify-content-center">
-                                        <div className="col-lg-5 col-6 py-3">
+                                        <div className="col-lg-3 col-6 py-3">
                                             <img src="./assets/images/thug-of-war.gif" className="w-100" alt="" />
                                             {/* <FencingStickerAnimation /> */}
                                         </div>
@@ -341,6 +345,7 @@ const Homepage = () => {
                 )}
             </section>
             <VolleyBallAnimation />
+            <MobileBallAnimation />
             <section>
                 <div className="marquee-strip">
                     <div className="marquee-inner">
@@ -363,11 +368,16 @@ const Homepage = () => {
                 </div>
             </section>
             <HorseAnimation />
-            {/* <div className="position-relative " id="speakers">
+            <div className="position-relative " id="speakers">
                 <SpeakerSwiper />
-            </div> */}
+            </div>
             <ArcherScrollAnimation />
-            <GuruAward />
+            {/* <section className="position-relative">
+                <GuruAwardAnimation />
+            </section> */}
+            <div data-aos="zoom-in">
+                <GuruAward />
+            </div>
             {/* <section className="pt-5 features_section">
                 <div className="features_content">
                     <div className="section_container">
@@ -536,18 +546,15 @@ const Homepage = () => {
 
                                     <div data-aos="fade-up">
                                         <h2 className="about_heading">
-                                            About <span>SSVM Institutions</span>
+                                            About SSVM Institutions
                                         </h2>
+                                        <p className="mt-4">
+                                            SSVM Institutions have consistently stood at the intersection of academic excellence and future-focused education. With a strong belief that education must extend beyond classrooms, SSVM has built a culture that nurtures curiosity, leadership, and real-world thinking.
+                                        </p>
+                                        <p>
+                                            Across campuses, the focus has always been clear: shape individuals who don’t just succeed in exams, but thrive in life. From entrepreneurship and innovation to sports and holistic development, SSVM students are encouraged to explore, experiment, and evolve.
+                                        </p>
                                     </div>
-
-                                    <p className="mt-4">
-                                        SSVM Institutions have consistently stood at the intersection of academic excellence and future-focused education. With a strong belief that education must extend beyond classrooms, SSVM has built a culture that nurtures curiosity, leadership, and real-world thinking.
-                                    </p>
-
-                                    <p>
-                                        Across campuses, the focus has always been clear: shape individuals who don’t just succeed in exams, but thrive in life. From entrepreneurship and innovation to sports and holistic development, SSVM students are encouraged to explore, experiment, and evolve.
-                                    </p>
-
                                 </div>
                             </div>
                         </div>
@@ -559,7 +566,7 @@ const Homepage = () => {
                     <div data-aos="fade-up" data-aos-delay="200">
                         <LetterReveal text="Media Coverage" className="heading_about text-center text-white small_sm_abt_heading" />
                     </div>
-                    <div className="pt-4">
+                    <div className="pt-4" data-aos="fade-up" data-aos-delay="300">
                         <Swiper
                             modules={[Autoplay, FreeMode]}
                             loop={true}
@@ -611,7 +618,7 @@ const Homepage = () => {
                     <div data-aos="fade-up" data-aos-delay="200">
                         <LetterReveal text="Past Edition Highlights" className="heading_about text-center text-white small_sm_abt_heading" />
                     </div>
-                    <div className="row g-4 mt-4">
+                    <div className="row g-4 mt-4" data-aos="fade-up" data-aos-delay="300">
                         {videos.map((id, i) => (
                             <div className="col-md-4 my-4" key={i}>
                                 <iframe
@@ -630,7 +637,9 @@ const Homepage = () => {
                 </div>
             </section>
             <MattersSection />
-            <Footer />
+            <div data-aos="zoom-in">
+                <Footer />
+            </div>
         </>
     );
 };

@@ -207,7 +207,7 @@ const VolleyBallAnimation = () => {
     }, []);
 
     return (
-        <section ref={sectionRef} className="basket-section h-100">
+        <section ref={sectionRef} className="basket-section overflow-hidden h-100 d-none d-md-block">
             {!window.innerWidth < 768 && (
                 <div className="basket-wrapper">
                     <div ref={lottieContainer} className="basket-lottie"></div>
@@ -217,7 +217,7 @@ const VolleyBallAnimation = () => {
             <div className="volleyball_anim_content">
                 {/* Bottom Left Text */}
                 <div ref={bottomTextRef} className="bottom-text me-lg-0 me-3">
-                    <LetterReveal text="Shape Tomorrow Through Action" className="heading_about small_sm_abt_heading" />
+                    <LetterReveal text="Shape Tomorrow Through Action" className="heading_about text-white small_sm_abt_heading" />
                 </div>
                 {/* <div ref={bottomTextRef} className="bottom-text me-lg-0 me-3">
                     <ScrollRevealText text="Transforming India Conclave 2026" className="reveal_heading main_heading_about" />

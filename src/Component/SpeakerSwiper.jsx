@@ -76,15 +76,16 @@ export default function SpeakerSwiper() {
                         </span>
 
                         {/* 🔥 IMPORTANT: Only use for splitting, NOT animation */}
-                        <LetterReveal
-                            text="Speakers"
-                            className="main_heading_about text-white"
-                        />
-
-                        <p>
-                            The SSVM Transforming India Conclave 2026 is a premier gathering of visionary leaders,
-                            industry trailblazers, and social entrepreneurs.
-                        </p>
+                        <div data-aos="fade-up">
+                            <LetterReveal
+                                text="Speakers"
+                                className="main_heading_about text-white"
+                            />
+                            <p>
+                                The SSVM Transforming India Conclave 2026 is a premier gathering of visionary leaders,
+                                industry trailblazers, and social entrepreneurs.
+                            </p>
+                        </div>
 
                     </div>
                 </div>

@@ -61,9 +61,9 @@
 }
 
 .bottom-text h2.heading_about {
-    font-size: 50px;
+    font-size: 42px !important;
     font-weight: 700;
-    line-height: 40px;
+    line-height: 38px;
 
 }
 
@@ -76,7 +76,7 @@
 } */
 
 .middle-text h2 {
-    font-size: 60px;
+    font-size: 70px;
 }
 
 .middle-text {
@@ -123,7 +123,7 @@
 .left_fonder_content h2:last-child {
     font-family: var(--body-font) !important;
     font-size: 17px;
-    font-weight: 700;
+    font-weight: 900;
 }
 
 .left_fonder_content h2 .letter {
@@ -150,6 +150,10 @@
 }
 
 @media screen and (max-width: 767px) {
+    .mobile-discover-v12 svg {
+        display: none;
+    }
+
     .small_sm_abt_heading h2 {
         font-size: 20px !important;
     }
@@ -243,14 +247,8 @@
     }
 }
 
-@media screen and (min-width: 1500px) {
-
-    .bottom-text h2,
+@media (min-width: 992px) and (min-width: 1220px) {
     .middle-text h2 {
-        font-size: 80px !important;
-    }
-
-    .bottom-text h2 span {
-        line-height: 70px;
+        font-size: 60px;
     }
 }

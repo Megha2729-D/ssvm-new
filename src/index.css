@@ -1,4 +1,4 @@
-/* @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"); */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 @font-face {
   font-family: "Sneaker";
@@ -8,13 +8,13 @@
   font-display: swap;
 }
 
-@font-face {
+/* @font-face {
   font-family: "Montserrat";
-  src: url("./assets/fonts/Montserrat.woff2") format("opentype");
+  src: url("./assets/fonts/Montserrat-VariableFont_wght.ttf") format("opentype");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
-}
+} */
 
 :root {
   --c1: #F2FF33;
@@ -32,6 +32,10 @@
 
 section {
   overflow: hidden;
+}
+
+.section-sub-title {
+  font-size: 18px;
 }
 
 .section-sub-title img {
@@ -254,11 +258,31 @@ img {
   width: 100%;
   overflow: hidden;
 } */
+.top_section {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
 
 .top_section .banner_content_parent {
-  padding: 0 0 50px;
   position: relative;
   z-index: 3;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 0 !important;
+}
+
+.banner_content_parent .row {
+  height: 100%;
+  align-items: center;
+}
+
+/* .anim_heading img, */
+.anim_heading img {
+  max-height: 58vh;
+  object-fit: contain;
 }
 
 /* Background Video */
@@ -311,7 +335,10 @@ img {
 }
 
 .banner_content {
-  padding-bottom: 80px;
+  padding-bottom: 0;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .banner_content p {
@@ -542,6 +569,9 @@ img {
   line-height: 1.6;
 }
 
+.reveal_heading {
+  font-weight: bold;
+}
 
 .mission_container .reveal_heading {
   line-height: 65px;
@@ -830,7 +860,6 @@ img {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  font-size: 0.8rem;
   text-transform: uppercase;
   letter-spacing: 0.15em;
   color: #F2FF33;
@@ -879,6 +908,7 @@ img {
   position: relative;
   border-radius: 1.5rem;
   overflow: hidden;
+  width: 100%;
 }
 
 /* glow border */
@@ -921,7 +951,7 @@ img {
 }
 
 h2.heading_about {
-  font-size: 42px !important;
+  font-size: 42px;
   font-weight: 700;
 }
 
@@ -986,6 +1016,13 @@ h2.heading_about {
 
 /* marquee section end */
 
+@media screen and (min-width: 991px) {
+  .main_content {
+    max-height: 100vh;
+  }
+
+}
+
 @media (min-width: 991px) and (max-width: 1400px) {
   .banner_text {
     font-size: 9vw !important;
@@ -1010,6 +1047,10 @@ h2.heading_about {
 }
 
 @media screen and (max-width: 991px) {
+  .section-sub-title {
+    font-size: 13px !important;
+  }
+
   h2.heading_about {
     font-size: 34px !important;
     font-weight: 700;
@@ -1067,44 +1108,8 @@ h2.heading_about {
 }
 
 @media screen and (min-width: 1800px) {
-  .lottie-container {
-    max-width: 100% !important;
-  }
-
-  .archer-section {
-    width: 100%;
-    height: 100%;
-  }
-
-  .center-text {
-    width: 100% !important;
-  }
-
-  .archer-text img {
-    width: 300px !important;
-  }
-
-  .left_fonder_content h2 {
-    font-size: 40px !important;
-  }
-
-  .left_fonder_content h2:last-child {
-    font-size: 50px !important;
-  }
-
-  .archer-text {
-    max-width: 36% !important;
-    bottom: 30% !important;
-    top: auto !important;
-  }
-
-  .archer-text h2 {
-    font-size: 40px !important;
-    margin-top: 20px;
-  }
-
-  .archer-text p {
-    font-size: 20px !important;
+  .about_section .about_heading {
+    font-size: 60px !important;
   }
 
   .features_section::before {
@@ -1115,4 +1120,14 @@ h2.heading_about {
     right: -10px;
   }
 
+}
+
+@media screen and (max-width: 400px) {
+  .section-sub-title {
+    font-size: 10px !important;
+  }
+
+  .about_section .about_heading {
+    font-size: 30px;
+  }
 }

@@ -53,18 +53,6 @@
     color: #ddd;
 }
 
-/* @media screen and (min-width: 1501px) {
-    .archer-wrapper {
-        position: static !important;
-    }
-} */
-
-/* @media screen and (min-width: 1500px) {
-    .archer-wrapper {
-        position: relative !important;
-    }
-} */
-
 @media screen and (max-width: 991px) {
     .archery_anim_content {
         position: relative !important;
@@ -127,4 +115,55 @@
     .archery_main_heading {
         opacity: 1 !important;
     }
+}
+
+@media screen and (min-width: 1500px) {
+    .archery_main_heading h2 {
+        font-size: 50px !important;
+    }
+
+    .lottie-container {
+        max-width: 100% !important;
+    }
+
+    .archer-section {
+        width: 100%;
+        height: 100%;
+    }
+
+    .center-text {
+        width: 100% !important;
+    }
+
+    .archer-text img {
+        width: 300px !important;
+    }
+
+    .left_fonder_content h2 {
+        font-size: 40px !important;
+    }
+
+    .left_fonder_content h2:first-child {
+        font-size: 50px !important;
+    }
+
+    .left_fonder_content h2:last-child {
+        font-size: 28px !important;
+    }
+
+    .archer-text {
+        max-width: 36% !important;
+        bottom: 30% !important;
+        top: auto !important;
+    }
+
+    .archer-text h2 {
+        font-size: 57px !important;
+        margin-top: 20px;
+    }
+
+    .archer-text p {
+        font-size: 20px !important;
+    }
+
 }

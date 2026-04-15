@@ -4,10 +4,11 @@ main-loader {
 }
 
 .loader h1 {
-    font-size: 30px !important;
+    font-size: 50px !important;
     letter-spacing: 10px;
     text-align: center;
 }
+
 
 .main-fader {
     width: 100%;
@@ -87,5 +88,11 @@ main-loader {
 
     100% {
         opacity: 0.1;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .loader h1 {
+        font-size: 40px !important;
     }
 }
