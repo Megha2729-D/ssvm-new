@@ -344,8 +344,8 @@ const Homepage = () => {
                     </div>
                 )}
             </section>
-            <VolleyBallAnimation />
             <MobileBallAnimation />
+            <VolleyBallAnimation />
             <section>
                 <div className="marquee-strip">
                     <div className="marquee-inner">

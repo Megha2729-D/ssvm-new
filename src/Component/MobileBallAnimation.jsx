@@ -33,7 +33,7 @@ const MobileBallAnimation = () => {
                 scrollTrigger: {
                     trigger: containerRef.current,
                     start: "top top",
-                    end: "+=100%", // 🔥 longer scroll = smoother control
+                    end: "+=50%", // 🔥 longer scroll = smoother control
                     pin: pinRef.current,
                     scrub: 1.2, // smooth lag
                     anticipatePin: 1,
@@ -54,7 +54,7 @@ const MobileBallAnimation = () => {
             tl.fromTo(bgRevealRef.current,
                 { clipPath: "circle(0% at 50% 50%)" },
                 { clipPath: "circle(150% at 50% 50%)", duration: 5 },
-                -0.5
+                -2
             );
 
             // =========================
@@ -76,35 +76,35 @@ const MobileBallAnimation = () => {
                 opacity: 1,
                 visibility: "visible",
                 duration: 0.5
-            }, -0.1);
+            }, .5);
 
             tl.fromTo(".text-reveal-item",
                 { y: 40, opacity: 0 },
                 { y: 0, opacity: 1, stagger: 0.3, duration: 1 },
-                -0.1
+                .5
             );
 
             const letters = document.querySelectorAll(".text-reveal-item .letter");
             tl.fromTo(letters,
                 { opacity: 0, y: 10 },
                 { opacity: 1, y: 0, stagger: 0.03, duration: 0.6 },
-                -0.1
+                .5
             );
 
             // =========================
             // 🧑‍💼 PHASE 4: FOUNDER REVEAL (80 → 100%)
             // =========================
             tl.to(".main-brand-stack", {
-                y: -20,
+                // y: -20,
                 scale: 0.95,
                 duration: 1,
                 ease: "power2.out"
-            }, -0.1);
+            }, .5);
 
             tl.fromTo(".founder-reveal-item",
                 { y: 60, opacity: 0, scale: 0.9 },
                 { y: 0, opacity: 1, scale: 1, duration: 1.2, ease: "back.out(1.4)" },
-                0
+                .5
             );
         });
 
@@ -118,7 +118,7 @@ const MobileBallAnimation = () => {
         <div
             ref={containerRef}
             className="mobile-discover-v12 d-block d-md-none overflow-hidden"
-            style={{ height: "100vh", position: "relative", zIndex: 100 }}
+            style={{ height: "70vh", position: "relative", zIndex: 100 }}
         >
             <div ref={pinRef} className="w-100 h-100 position-relative">
 
@@ -146,7 +146,7 @@ const MobileBallAnimation = () => {
                     <div
                         ref={contentRef}
                         // style={{ opacity: 0, visibility: "hidden" }}
-                        className="text-center px-3"
+                        className="text-center px-3 mb-5"
                     >
                         <div className="text-reveal-item mb-3">
                             <div className="main-brand-stack">
@@ -156,11 +156,11 @@ const MobileBallAnimation = () => {
                             </div>
                         </div>
 
-                        <div className="founder-reveal-item left_fonder_content ">
+                        {/* <div className="founder-reveal-item left_fonder_content ">
                             <img src="/assets/images/ssvm-founder-anim.gif" className="w-75" />
                             <h2 className="main_heading_about fw-bold mt-2 text-black">Dr. Manimekalai Mohan</h2>
                             <h2 className="main_heading_about text-black">Founder, SSVM Institutions</h2>
-                        </div>
+                        </div> */}
                     </div>
 
                 </div>
