@@ -4,7 +4,7 @@
 
 @media screen and (max-width: 991px) {
     .matters_section h2 {
-        font-size: 31px;
+        font-size: 31px !important;
     }
 
     .matter-card h2 {
