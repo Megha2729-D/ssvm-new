@@ -224,7 +224,7 @@ const VolleyBallAnimation = () => {
                     <ScrollRevealText text="FlEX YOUR FUTURE 2026" className="reveal_heading" />
                 </div> */}
                 {/* Middle Text */}
-                <div ref={middleTextRef} className="middle-text d-none d-md-block" style={{opacity: 0}}>
+                <div ref={middleTextRef} className="middle-text d-none d-md-flex" style={{opacity: 0}}>
                     <LetterReveal
                         text="Ssvm Transforming"
                         className="heading_about main_heading_about"
