@@ -207,7 +207,7 @@ const VolleyBallAnimation = () => {
     }, []);
 
     return (
-        <section ref={sectionRef} className="basket-section overflow-hidden h-100 d-none d-md-block">
+        <section ref={sectionRef} className="basket-section h-100 d-none d-md-block">
             {!window.innerWidth < 768 && (
                 <div className="basket-wrapper">
                     <div ref={lottieContainer} className="basket-lottie"></div>
@@ -224,7 +224,7 @@ const VolleyBallAnimation = () => {
                     <ScrollRevealText text="FlEX YOUR FUTURE 2026" className="reveal_heading" />
                 </div> */}
                 {/* Middle Text */}
-                <div ref={middleTextRef} className="middle-text">
+                <div ref={middleTextRef} className="middle-text" style={{opacity: 0}}>
                     <LetterReveal
                         text="Ssvm Transforming"
                         className="heading_about main_heading_about"
