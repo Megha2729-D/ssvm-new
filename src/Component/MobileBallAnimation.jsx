@@ -135,7 +135,7 @@ const MobileBallAnimation = () => {
                 </div>
 
                 {/* CONTENT */}
-                <div className="position-absolute w-100 h-100 d-flex flex-column align-items-center justify-content-center" style={{ zIndex: 10 }}>
+                <div className="position-absolute w-100 h-100 d-flex flex-column align-items-center justify-content-end pb-5" style={{ zIndex: 10 }}>
 
                     {/* LOTTIE */}
                     <div style={{ height: "12vh", width: "100%" }}>
