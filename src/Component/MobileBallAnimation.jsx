@@ -48,13 +48,13 @@ const MobileBallAnimation = () => {
                 scale: 0.1,
                 opacity: 0,
                 ease: "power2.inOut",
-                duration: 2,
+                duration: 5,
             }, 0);
 
             tl.fromTo(bgRevealRef.current,
                 { clipPath: "circle(0% at 50% 50%)" },
                 { clipPath: "circle(150% at 50% 50%)", duration: 5 },
-                -2
+                -5
             );
 
             // =========================
