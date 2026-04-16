@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-
+import ScrollToTop from "./Component/ScrollToTop";
 import Homepage from "./Pages/Homepage";
 import StudentpreneurAward from "./Pages/StudentpreneurAward";
 import Preloader from "./Component/Preloader";
@@ -90,6 +90,7 @@ const Router = () => {
 
     return (
         <BrowserRouter>
+            <ScrollToTop />
             <Routes>
                 {/* ✅ Homepage */}
                 <Route

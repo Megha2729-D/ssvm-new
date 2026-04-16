@@ -18,7 +18,7 @@ const handleInitialHardRefresh = () => {
     console.log('Initial load detected → forcing hard refresh...');
     window.location.reload();
   }
-};
+};  
 
 handleInitialHardRefresh();
 
