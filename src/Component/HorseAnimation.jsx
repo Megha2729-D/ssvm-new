@@ -17,11 +17,11 @@ const HorseAnimation = () => {
     const contentRef = useRef(null);
     const shapeRef = useRef(null);
 
-    useEffect(() => {
-        const handleResize = () => ScrollTrigger.refresh();
-        window.addEventListener("resize", handleResize);
-        return () => window.removeEventListener("resize", handleResize);
-    }, []);
+    // useEffect(() => {
+    //     const handleResize = () => ScrollTrigger.refresh();
+    //     window.addEventListener("resize", handleResize);
+    //     return () => window.removeEventListener("resize", handleResize);
+    // }, []);
 
     useEffect(() => {
         let animation;
@@ -61,6 +61,8 @@ const HorseAnimation = () => {
                     end: () => "+=" + window.innerHeight * 1.6,
                     scrub: true,
                     pin: true,
+                    anticipatePin: 1,
+                    invalidateOnRefresh: true,
                 },
             });
 
@@ -103,8 +105,11 @@ const HorseAnimation = () => {
         };
 
         animation.addEventListener("DOMLoaded", () => {
-            handleAnimation();
-            ScrollTrigger.refresh();
+            requestAnimationFrame(() => {
+                requestAnimationFrame(() => {
+                    handleAnimation();
+                });
+            });
         });
 
         return () => {
