@@ -39,7 +39,7 @@ const Router = () => {
             window.addEventListener("load", () => {
                 setTimeout(() => {
                     ScrollTrigger.refresh(true);
-                }, 200); // buffer for stability
+                }, 1000); // buffer for stability
             });
 
         }, 2000);
