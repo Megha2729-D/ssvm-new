@@ -12,6 +12,19 @@ gsap.registerPlugin(ScrollTrigger);
 const Router = () => {
     const [loading, setLoading] = useState(true);
 
+    // 🔥 1. Prevent browser scroll restoration (VERY IMPORTANT)
+    useEffect(() => {
+        if ("scrollRestoration" in window.history) {
+            window.history.scrollRestoration = "manual";
+        }
+    }, []);
+
+    // 🔥 2. Reset scroll position on load
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
+    // 🔥 3. Preloader + FINAL ScrollTrigger refresh fix
     useEffect(() => {
         document.body.style.overflow = "hidden";
 
@@ -19,11 +32,14 @@ const Router = () => {
             setLoading(false);
             document.body.style.overflow = "auto";
 
-            // ✅ WAIT until everything (images, Lottie, DOM) is fully loaded
+            // ✅ FORCE layout calculation
+            document.body.getBoundingClientRect();
+
+            // ✅ Wait for full page load (images, Lottie, fonts)
             window.addEventListener("load", () => {
                 setTimeout(() => {
                     ScrollTrigger.refresh(true);
-                }, 50);
+                }, 200); // buffer for stability
             });
 
         }, 2000);
@@ -31,6 +47,7 @@ const Router = () => {
         return () => clearTimeout(timer);
     }, []);
 
+    // 🔥 4. Global GSAP stability settings
     useEffect(() => {
         gsap.config({
             autoSleep: 60,
@@ -41,11 +58,9 @@ const Router = () => {
             ignoreMobileResize: true,
         });
 
-        // ✅ GLOBAL FIX for multiple pinned sections
         ScrollTrigger.defaults({
             anticipatePin: 1,
         });
-
     }, []);
 
     if (loading) {
