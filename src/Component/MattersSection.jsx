@@ -104,12 +104,12 @@ const MattersSection = () => {
             <div className="section_container position-relative" style={{ zIndex: 1 }}>
                 <div className="row justify-content-center mb-lg-5 mb-0">
                     <div className="col-lg-10 text-center">
-                        <span className="section-sub-title text-uppercase small fw-bold mb-3 d-block" style={{ color: "#F2FF33" }}>
+                        <span className="section-sub-title text-uppercase text-white small fw-bold mb-3 d-block" style={{ color: "#F2FF33" }}>
                             <i className="bi bi-info-circle-fill me-2"></i> Why It Matters
                         </span>
                         <TitleReveal
                             text="Why This Conclave"
-                            className="heading_about text-white"
+                            className="heading_about text-c1"
                             style={{
                                 textAlign: "center",
                                 display: "block"
@@ -118,7 +118,7 @@ const MattersSection = () => {
                         />
                         <TitleReveal
                             text=" Matters"
-                            className="heading_about text-white"
+                            className="heading_about text-c1"
                             style={{
                                 textAlign: "center",
                                 display: "block"
@@ -128,7 +128,7 @@ const MattersSection = () => {
                         <div data-aos="fade-up" data-aos-delay="200">
                             <p className="lead text-white-50 mx-auto px-lg-0 px-3" style={{
                                 maxWidth: "700px",
-                                fontSize: isMobile ? "1rem" : "1.25rem",
+                                // fontSize: isMobile ? "1rem" : "1.25rem",
                                 lineHeight: "1.6"
                             }}>
                                 Most platforms <span style={{ color: "white", fontWeight: "bold" }}>talk to students</span>. <br className="d-lg-block d-none" />
@@ -174,9 +174,9 @@ const MattersSection = () => {
                                 </div>
                                 <TitleReveal
                                     text={item.title}
-                                    className="mb-lg-3 mb-2"
+                                    className="mb-lg-3 mb-2 text-c1"
                                     style={{
-                                        color: "white",
+                                        // color: "white",
                                         fontWeight: "700",
                                         fontSize: isMobile ? "1.25rem" : "1.5rem"
                                     }}

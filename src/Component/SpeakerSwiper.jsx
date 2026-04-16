@@ -79,7 +79,7 @@ export default function SpeakerSwiper() {
                         <div data-aos="fade-up">
                             <LetterReveal
                                 text="Speakers"
-                                className="main_heading_about text-white"
+                                className="main_heading_about text-c1"
                             />
                             <p>
                                 The SSVM Transforming India Conclave 2026 is a premier gathering of visionary leaders,

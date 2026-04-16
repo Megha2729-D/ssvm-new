@@ -539,13 +539,13 @@ const Homepage = () => {
                             <div className="col-xl-6">
                                 <div className="about__content ps-4">
 
-                                    <span className="section-sub-title">
+                                    <span className="section-sub-title fw-bold text-white">
                                         <img src={`${BASE_IMAGE_URL}favicon.png`} alt="" />
                                         About Us
                                     </span>
 
                                     <div data-aos="fade-up">
-                                        <h2 className="about_heading">
+                                        <h2 className="about_heading text-c1">
                                             About SSVM Institutions
                                         </h2>
                                         <p className="mt-4">
@@ -564,7 +564,7 @@ const Homepage = () => {
             <section>
                 <div className="pb-4 media_coverage">
                     <div data-aos="fade-up" data-aos-delay="200">
-                        <LetterReveal text="Media Coverage" className="heading_about text-center text-white small_sm_abt_heading" />
+                        <LetterReveal text="Media Coverage" className="heading_about text-c1 text-center small_sm_abt_heading" />
                     </div>
                     <div className="pt-4" data-aos="fade-up" data-aos-delay="300">
                         <Swiper
@@ -616,7 +616,7 @@ const Homepage = () => {
             <section>
                 <div className="py-5 section_container">
                     <div data-aos="fade-up" data-aos-delay="200">
-                        <LetterReveal text="Past Edition Highlights" className="heading_about text-center text-white small_sm_abt_heading" />
+                        <LetterReveal text="Past Edition Highlights" className="heading_about text-center text-c1 small_sm_abt_heading" />
                     </div>
                     <div className="row g-4 mt-4" data-aos="fade-up" data-aos-delay="300">
                         {videos.map((id, i) => (

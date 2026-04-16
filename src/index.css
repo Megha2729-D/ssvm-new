@@ -27,7 +27,7 @@
   overflow: hidden !important;
 } */
 .text-c1 {
-  color: var(--c1);
+  color: var(--c1) !important;
 }
 
 section {
@@ -1052,12 +1052,12 @@ h2.heading_about {
   }
 
   h2.heading_about {
-    font-size: 34px !important;
+    font-size: 33px !important;
     font-weight: 700;
   }
 
   .about_section .about_heading {
-    font-size: 38px;
+    font-size: 33px;
   }
 
   .anim_heading {

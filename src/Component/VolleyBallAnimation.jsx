@@ -217,7 +217,7 @@ const VolleyBallAnimation = () => {
             <div className="volleyball_anim_content">
                 {/* Bottom Left Text */}
                 <div ref={bottomTextRef} className="bottom-text me-lg-0 me-3 d-none d-md-block">
-                    <LetterReveal text="Shape Tomorrow Through Action" className="heading_about text-white small_sm_abt_heading" />
+                    <LetterReveal text="Shape Tomorrow Through Action" className="heading_about text-c1 small_sm_abt_heading" />
                 </div>
                 {/* <div ref={bottomTextRef} className="bottom-text me-lg-0 me-3">
                     <ScrollRevealText text="Transforming India Conclave 2026" className="reveal_heading main_heading_about" />

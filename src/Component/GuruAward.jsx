@@ -26,7 +26,7 @@ const GuruAward = () => {
                                 <div data-aos="fade-up">
                                     <TitleReveal
                                         text="Inspirational Guru"
-                                        className="heading_about text-white "
+                                        className="heading_about text-c1 "
                                         style={{
                                             textAlign: "start",
                                             display: "block",
@@ -34,7 +34,7 @@ const GuruAward = () => {
                                     />
                                     <TitleReveal
                                         text="Awards"
-                                        className="heading_about text-white "
+                                        className="heading_about text-c1 "
                                         style={{
                                             textAlign: "start",
                                             display: "block",

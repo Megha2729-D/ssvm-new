@@ -83,7 +83,7 @@ const Footer = () => {
 
                         <div className="col-lg-6 d-flex justify-content-lg-end justify-content-start">
                             <div className="footer-block mt-5 mt-lg-0">
-                                <h4>CONTACT US</h4>
+                                <h4 className="text-c1">CONTACT US</h4>
 
                                 <p className="my-4 d-flex gap-1">
                                     <i className="bi bi-geo-fill text-secondary"></i>
