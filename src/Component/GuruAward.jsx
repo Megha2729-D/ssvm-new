@@ -2,7 +2,7 @@ import React from "react";
 import TitleReveal from "./TitleReveal";
 import "../assets/css/guruaward.css";
 
-const BASE_IMAGE_URL = "https://ssvm-main.onrender.com/assets/images/"
+const BASE_IMAGE_URL = "https://ssvm-new.onrender.com/assets/images/"
 
 const GuruAward = () => {
     return (

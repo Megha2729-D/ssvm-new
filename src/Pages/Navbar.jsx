@@ -2,7 +2,7 @@ import { useRef, useEffect, useState } from "react";
 import gsap from "gsap";
 import "../assets/css/navbar.css";
 
-const BASE_IMAGE_URL = "https://ssvm-main.onrender.com/assets/images/";
+const BASE_IMAGE_URL = "https://ssvm-new.onrender.com/assets/images/";
 
 const Navbar = () => {
     const navRef = useRef(null);
@@ -89,7 +89,7 @@ const Navbar = () => {
 
                     {/* LEFT LOGO */}
                     <div className="logo left_logo">
-                        <img src="./assets/images/logo-video.gif" className="logo-video" alt="" />
+                        <img src={`${BASE_IMAGE_URL}logo-video.gif`} className="logo-video" alt="" />
                     </div>
 
                     {/* DESKTOP NAV */}
@@ -131,7 +131,7 @@ const Navbar = () => {
 
                 <div className="w-100 d-flex justify-content-between">
                     <div className="nav_logo">
-                        <img src="./assets/images/logo-white.png" className="w-100" alt="" />
+                        <img src={`${BASE_IMAGE_URL}logo-white.png`} className="w-100" alt="" />
                     </div>
                     <button
                         className="close_btn"

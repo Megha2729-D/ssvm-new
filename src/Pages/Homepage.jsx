@@ -1,16 +1,10 @@
 import React, { useRef, useState, useEffect } from "react";
 import CustomCursor from "../Component/Cursor";
 import TextReveal from "../Component/TextReveal";
-import TextRevealSample from "../Component/sample";
 import { Autoplay, FreeMode } from "swiper/modules";
 
 import LetterReveal from "../Component/LetterReveal";
 import MattersSection from "../Component/MattersSection";
-
-// import BasketBallAnimation from "../Component/BasketBallAnimation"
-// import BasketBallAnimation1 from "../Component/BasketBallAnimation1"
-// import RunnerStickerAnimation from "../Component/RunnerStickerAnimation"
-// import RunnerStickerAnimation2 from "../Component/RunnerStickerAnimation2"
 
 import FencingStickerAnimation from "../Component/FencingStickerAnimation"
 import ScrollRevealText from "../Component/ScrollRevealText";
@@ -36,13 +30,13 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/effect-cards";
-const BASE_IMAGE_URL = "https://ssvm-main.onrender.com/assets/images/"
+const BASE_IMAGE_URL = "https://ssvm-new.onrender.com/assets/images/"
 const images = [
-    // "https://ssvm-main.onrender.com/assets/images/banner/image-1.jpg",
-    "https://ssvm-main.onrender.com/assets/images/banner/image-2.jpg",
-    "https://ssvm-main.onrender.com/assets/images/banner/image-3.jpg",
-    "https://ssvm-main.onrender.com/assets/images/banner/image-4.jpg",
-    "https://ssvm-main.onrender.com/assets/images/banner/image-5.jpg",
+    // "https://ssvm-new.onrender.com/assets/images/banner/image-1.jpg",
+    "https://ssvm-new.onrender.com/assets/images/banner/image-2.jpg",
+    "https://ssvm-new.onrender.com/assets/images/banner/image-3.jpg",
+    "https://ssvm-new.onrender.com/assets/images/banner/image-4.jpg",
+    "https://ssvm-new.onrender.com/assets/images/banner/image-5.jpg",
 ];
 
 const slides = [
@@ -282,7 +276,7 @@ const Homepage = () => {
                                 <div className="col-lg-8">
                                     <div className="row justify-content-center">
                                         <div className="col-lg-3 col-6 py-3">
-                                            <img src="./assets/images/thug-of-war.gif" className="w-100" alt="" />
+                                            <img src={`${BASE_IMAGE_URL}thug-of-war.gif`} className="w-100" alt="" />
                                             {/* <FencingStickerAnimation /> */}
                                         </div>
                                     </div>
@@ -290,7 +284,7 @@ const Homepage = () => {
                                         <div className="anim_heading_wrapper" onMouseMove={handleMouseMove}>
                                             {/* <img src="/assets/images/ring_theme.png" alt="Yellow Oval" className="yellow-oval" /> */}
                                             <div className="anim_heading">
-                                                <img src="./assets/images/banner-anim-cont.gif" className="w-100" alt="" />
+                                                <img src={`${BASE_IMAGE_URL}banner-anim-cont.gif`} className="w-100" alt="" />
                                                 {/* <TextReveal text="Flex" className="banner_text" />
                                                 <TextReveal text=" Your" className="banner_text" />
                                                 <TextReveal text=" Future" className="banner_text" /> */}
@@ -637,9 +631,7 @@ const Homepage = () => {
                 </div>
             </section>
             <MattersSection />
-            <div data-aos="zoom-in">
-                <Footer />
-            </div>
+            <Footer />
         </>
     );
 };

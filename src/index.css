@@ -62,7 +62,7 @@ body {
   font-family: var(--body-font) !important;
   color: #000000;
   overflow-x: hidden !important;
-  background: linear-gradient(#0e0e0eab, #0e0e0eab), url(https://ssvm-main.onrender.com/assets/images/banner.png);
+  background: linear-gradient(#0e0e0eab, #0e0e0eab), url(https://ssvm-new.onrender.com/assets/images/banner.png);
   background-size: cover;
   background-attachment: fixed;
   height: 100%;
@@ -245,7 +245,7 @@ img {
 
 
 /* .top_section {
-  background: url(https://ssvm-main.onrender.com/assets/images/banner.png);
+  background: url(https://ssvm-new.onrender.com/assets/images/banner.png);
   background-size: cover;
   background-attachment: fixed;
   height: 100%;

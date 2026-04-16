@@ -10,6 +10,8 @@ import runnerAnimation from "../assets/json/699cbf57a3baf554905772e8_volleyball_
 import AOS from "aos";
 import "aos/dist/aos.css";
 
+const BASE_IMAGE_URL = "https://ssvm-new.onrender.com/assets/images/"
+
 gsap.registerPlugin(ScrollTrigger);
 
 const VolleyBallAnimation = () => {
@@ -250,7 +252,7 @@ const VolleyBallAnimation = () => {
                     <div className="row justify-content-center">
 
                         <div className="col-lg-6">
-                            <img src="./assets/images/ssvm-founder-anim.gif" data-aos="zoom-in" data-aos-delay="100" className="w-100" alt="" />
+                            <img src={`${BASE_IMAGE_URL}ssvm-founder-anim.gif`} data-aos="zoom-in" data-aos-delay="100" className="w-100" alt="" />
                         </div>
                         <div className="left_fonder_content col-lg-12 d-flex flex-column align-items-center justify-content-center">
                             <div data-aos="fade-up">

@@ -8,7 +8,7 @@ import "../assets/css/archer.css";
 import archerDesktop from "../assets/json/69ad2fc267eed7319abe0df2_archer_desktop.json";
 import archerMobile from "../assets/json/69ad2fd7d569da6b4b7f5c46_archer_mobile.json";
 
-const BASE_IMAGE_URL = "https://ssvm-main.onrender.com/assets/images/"
+const BASE_IMAGE_URL = "https://ssvm-new.onrender.com/assets/images/"
 
 gsap.registerPlugin(ScrollTrigger);
 
