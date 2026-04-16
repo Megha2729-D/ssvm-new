@@ -5,26 +5,50 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import Homepage from "./Pages/Homepage";
+import StudentpreneurAward from "./Pages/StudentpreneurAward";
 import Preloader from "./Component/Preloader";
 
+import AOS from "aos";
+import "aos/dist/aos.css";
+
+// ✅ Common layout
+import Navbar from "./Pages/Navbar";
+import Footer from "./Pages/Footer";
+
 gsap.registerPlugin(ScrollTrigger);
+
+// 🔥 Layout wrapper
+const Layout = ({ children }) => {
+    return (
+        <>
+            <Navbar />
+            {children}
+            <Footer />
+        </>
+    );
+};
 
 const Router = () => {
     const [loading, setLoading] = useState(true);
 
-    // 🔥 1. Prevent browser scroll restoration (VERY IMPORTANT)
+    // AOS init
+    useEffect(() => {
+        AOS.init({ duration: 1000, once: false, easing: "ease-in-out" });
+    }, []);
+
+    // Prevent scroll restore
     useEffect(() => {
         if ("scrollRestoration" in window.history) {
             window.history.scrollRestoration = "manual";
         }
     }, []);
 
-    // 🔥 2. Reset scroll position on load
+    // Reset scroll
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
 
-    // 🔥 3. Preloader + FINAL ScrollTrigger refresh fix
+    // Preloader
     useEffect(() => {
         document.body.style.overflow = "hidden";
 
@@ -32,22 +56,19 @@ const Router = () => {
             setLoading(false);
             document.body.style.overflow = "auto";
 
-            // ✅ FORCE layout calculation
             document.body.getBoundingClientRect();
 
-            // ✅ Wait for full page load (images, Lottie, fonts)
             window.addEventListener("load", () => {
                 setTimeout(() => {
                     ScrollTrigger.refresh(true);
-                }, 10000); // buffer for stability
+                }, 1000); // ⚠️ reduced from 10s (no need huge delay)
             });
-
         }, 2000);
 
         return () => clearTimeout(timer);
     }, []);
 
-    // 🔥 4. Global GSAP stability settings
+    // GSAP config
     useEffect(() => {
         gsap.config({
             autoSleep: 60,
@@ -70,7 +91,25 @@ const Router = () => {
     return (
         <BrowserRouter>
             <Routes>
-                <Route path="/" element={<Homepage />} />
+                {/* ✅ Homepage */}
+                <Route
+                    path="/"
+                    element={
+                        <Layout>
+                            <Homepage />
+                        </Layout>
+                    }
+                />
+
+                {/* ✅ New Route */}
+                <Route
+                    path="/studentpreneur-award"
+                    element={
+                        <Layout>
+                            <StudentpreneurAward />
+                        </Layout>
+                    }
+                />
             </Routes>
         </BrowserRouter>
     );

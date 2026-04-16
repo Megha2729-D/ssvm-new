@@ -21,11 +21,9 @@ import SpeakerSwiper from "../Component/SpeakerSwiper";
 import CycleAnimation from "../Component/CycyleAnimation";
 
 
-import Navbar from "./Navbar";
-import Footer from "./Footer";
+// import Navbar from "./Navbar";
+// import Footer from "./Footer";
 
-import AOS from "aos";
-import "aos/dist/aos.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
@@ -165,10 +163,7 @@ const Homepage = () => {
         if (window.innerWidth < 768) setIsMobile(true);
     }, []);
 
-    // AOS init
-    useEffect(() => {
-        AOS.init({ duration: 1000, once: false, easing: "ease-in-out" });
-    }, []);
+
 
     // Mobile card fly-in
     useEffect(() => {
@@ -270,7 +265,7 @@ const Homepage = () => {
             <section id="home">
                 <div className="main_content">
                     <div className="top_section">
-                        <Navbar />
+                        {/* <Navbar /> */}
                         <div className="section_container banner_content_parent">
                             <div className="row justify-content-center pb-4">
                                 <div className="col-lg-8">
@@ -631,7 +626,7 @@ const Homepage = () => {
                 </div>
             </section>
             <MattersSection />
-            <Footer />
+            {/* <Footer /> */}
         </>
     );
 };

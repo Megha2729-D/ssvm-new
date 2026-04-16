@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 import lottie from "lottie-web";
 import gsap from "gsap";
 import ScrollRevealText from "./ScrollRevealText";
@@ -155,9 +156,11 @@ const ArcherScrollAnimation = () => {
                             <div className="col-lg-12 mt-1">
                                 <div className="hero-actions d-flex justify-content-between w-100">
                                     <div className="d-flex flex-column align-items-center justify-content-center">
-                                        <button className="btn-primary ssvm_reg_butt">
-                                            <span>Register</span>
-                                        </button>
+                                        <Link to={"/studentpreneur-award"}>
+                                            <button className="btn-primary ssvm_reg_butt">
+                                                <span>Register</span>
+                                            </button>
+                                        </Link>
                                     </div>
                                 </div>
                             </div>
