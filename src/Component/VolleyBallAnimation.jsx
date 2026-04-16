@@ -169,7 +169,7 @@ const VolleyBallAnimation = () => {
                 </div>
             )}
 
-            <div className="volleyball_anim_content">
+            <div className="volleyball_anim_content ">
                 {/* Bottom Text */}
                 <div ref={bottomTextRef} className="bottom-text d-none d-md-block">
                     <LetterReveal
@@ -196,8 +196,8 @@ const VolleyBallAnimation = () => {
                             />
                         </div>
                         <div className="col-lg-12 text-center">
-                            <h2>Dr. Manimekalai Mohan</h2>
-                            <h2>Founder, SSVM Institutions</h2>
+                            <h2 className="main_heading_about">Dr. Manimekalai Mohan</h2>
+                            <h2 className="main_heading_about">Founder, SSVM Institutions</h2>
                         </div>
                     </div>
                 </div>
