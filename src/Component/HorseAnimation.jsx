@@ -155,8 +155,7 @@ const HorseAnimation = () => {
                                                 </p>
 
                                                 <p>
-                                                    Over the past four years, the conclave has grown into a powerful platform
-                                                    where ideas meet action.
+                                                    Over the past four years, the conclave has grown into a powerful platform where ideas meet action. Each year, under a new theme, it has brought together students, educators, entrepreneurs, and change-makers to engage in conversations that truly matter.
                                                 </p>
 
                                                 <div className="horse_second_sec">
@@ -166,8 +165,7 @@ const HorseAnimation = () => {
                                                     />
 
                                                     <p>
-                                                        Flex Your Future shifts the focus to the foundation behind success—
-                                                        health, resilience, and balance.
+                                                        Flex Your Future shifts the focus to the foundation behind every form of success—health. It looks at the mind and body as one system, where mental resilience, emotional balance, nutrition, and physical strength work together.
                                                     </p>
                                                 </div>
 

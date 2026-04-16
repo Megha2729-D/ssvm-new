@@ -92,14 +92,14 @@
     /* box-shadow: 1px 1px 30px 1px #f2ff33; */
     border-radius: 50%;
     content: "";
-    height: 103vh;
-    left: -200px;
+    height: 110vh;
+    left: -220px;
     position: absolute;
     top: 0;
     bottom: 130px;
     margin: auto;
     transform: rotate(20deg);
-    width: 110%;
+    width: 120%;
     z-index: 1;
 }
 
@@ -114,7 +114,7 @@
 }
 
 .missin_inner_part h2 {
-    font-size: 42px !important;
+    font-size: 35px !important;
     font-weight: 700;
 }
 
