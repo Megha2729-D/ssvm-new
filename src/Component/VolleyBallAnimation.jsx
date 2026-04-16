@@ -2,15 +2,12 @@ import React, { useEffect, useRef } from "react";
 import lottie from "lottie-web";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
-import ScrollRevealText from "./ScrollRevealText";
 import LetterReveal from "./LetterReveal";
 
 import "../assets/css/volleyball.css";
 import runnerAnimation from "../assets/json/699cbf57a3baf554905772e8_volleyball_desktop.json";
-import AOS from "aos";
-import "aos/dist/aos.css";
 
-const BASE_IMAGE_URL = "https://ssvm-new.onrender.com/assets/images/"
+const BASE_IMAGE_URL = "https://ssvm-new.onrender.com/assets/images/";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -21,42 +18,24 @@ const VolleyBallAnimation = () => {
     const middleTextRef = useRef(null);
     const centerTextRef = useRef(null);
 
-    // AOS is initialized globally in Homepage.jsx
-    // useEffect(() => {
-    //     // Refresh ScrollTrigger when this component mounts to account for its height
-    //     ScrollTrigger.refresh();
-    // }, []);
-    useEffect(() => {
-        const handleResize = () => {
-            // ScrollTrigger.refresh();
-        };
+    const triggerRef = useRef(null); // ✅ store trigger
 
-        window.addEventListener("resize", handleResize);
-
-        return () => {
-            window.removeEventListener("resize", handleResize);
-        };
-    }, []);
     useEffect(() => {
-        const isMobile = window.innerWidth < 768; // check for mobile
+        const isMobile = window.innerWidth < 768;
+
         if (isMobile) {
-            // Mobile: show text statically
             gsap.set(bottomTextRef.current, { opacity: 1, y: 0 });
             gsap.set(middleTextRef.current, { opacity: 1, y: 0 });
             gsap.set(centerTextRef.current, { opacity: 1, y: 0 });
-            return; // Skip animation & ScrollTrigger
+            return;
         }
 
-        // Desktop: normal animation
         let animation;
-        let bottomTween = null;
-        let middleTween = null;  // added
-        let centerTween = null;
+        let bottomTween, middleTween, centerTween;
 
         let bottomHidden = false;
-        let middleShown = false; // added
+        let middleShown = false;
         let centerShown = false;
-
 
         animation = lottie.loadAnimation({
             container: lottieContainer.current,
@@ -67,139 +46,109 @@ const VolleyBallAnimation = () => {
         });
 
         animation.addEventListener("DOMLoaded", () => {
-            ScrollTrigger.refresh();
             const totalFrames = animation.totalFrames;
+
+            // 🔥 IMPORTANT: delayed refresh
+            setTimeout(() => {
+                ScrollTrigger.refresh();
+            }, 150);
 
             // Initial states
             gsap.set(bottomTextRef.current, { opacity: 1, y: 0 });
-            gsap.set(middleTextRef.current, { opacity: 0, y: 0 });
+            gsap.set(middleTextRef.current, { opacity: 0, y: 60 });
             gsap.set(centerTextRef.current, { opacity: 0, y: 60, scale: 0.1 });
-            // gsap.set(sectionRef.current, {
-            //     height: "100vh"   // ✅ lock height
-            // });
-            ScrollTrigger.create({
+
+            triggerRef.current = ScrollTrigger.create({
                 trigger: sectionRef.current,
                 start: "top top",
-                end: () => "+=" + window.innerHeight * 1.48,
+                end: () => "+=" + window.innerHeight * 1.5,
                 scrub: true,
                 pin: true,
                 pinSpacing: true,
-                anticipatePin: 1,
+                anticipatePin: 2,
                 invalidateOnRefresh: true,
 
                 onUpdate: (self) => {
                     const progress = self.progress;
-                    const startOffset = 0; // animation starts earlier (20%)
-                    const adjustedProgress = Math.min(Math.max((progress + startOffset), 0), 1);
 
-                    // const frame = Math.round(adjustedProgress * (totalFrames - 1));
-                    // animation.goToAndStop(frame, true);
-                    const slowFactor = 0.8; // 🔥 5% slower
-
-                    const slowedProgress = Math.min(progress * slowFactor, 1);
-
-                    const frame = Math.round(slowedProgress * (totalFrames - 1));
+                    // 🎯 Lottie control
+                    const slowFactor = 0.8;
+                    const frame = Math.round(
+                        Math.min(progress * slowFactor, 1) * (totalFrames - 1)
+                    );
                     animation.goToAndStop(frame, true);
-                    /* -------- Bottom text hide gradually (20% → 59%) -------- */
+
+                    /* -------- Bottom text -------- */
                     if (progress > 0.53 && !bottomHidden) {
                         bottomHidden = true;
-                        if (bottomTween) bottomTween.kill();
+                        bottomTween?.kill();
                         bottomTween = gsap.to(bottomTextRef.current, {
                             opacity: 0,
-                            y: 0,
-                            duration: 0.6,
-                            ease: "power2.out",
+                            duration: 0.5,
                         });
                     }
 
                     if (progress <= 0.53 && bottomHidden) {
                         bottomHidden = false;
-                        if (bottomTween) bottomTween.kill();
+                        bottomTween?.kill();
                         bottomTween = gsap.to(bottomTextRef.current, {
                             opacity: 1,
-                            y: 0,
-                            duration: 0.6,
-                            ease: "power2.out",
+                            duration: 0.5,
                         });
                     }
 
-                    /* -------- Middle text appears after bottom hides (40% → 35%) -------- */
-                    if (progress > 0.75 && progress < 0.96 && !centerShown && !middleShown) {
+                    /* -------- Middle text -------- */
+                    if (progress > 0.75 && progress < 0.95 && !middleShown) {
                         middleShown = true;
-                        if (middleTween) middleTween.kill();
+                        middleTween?.kill();
                         middleTween = gsap.to(middleTextRef.current, {
                             opacity: 1,
                             y: 0,
-                            duration: 0.8,
-                            ease: "power3.out",
+                            duration: 0.6,
                         });
                     }
 
-                    if ((progress <= 0.75 || progress >= 0.96) && middleShown) {
+                    if ((progress <= 0.75 || progress >= 0.95) && middleShown) {
                         middleShown = false;
-                        if (middleTween) middleTween.kill();
+                        middleTween?.kill();
                         middleTween = gsap.to(middleTextRef.current, {
                             opacity: 0,
                             y: 60,
-                            duration: 0.6,
-                            ease: "power2.out",
+                            duration: 0.5,
                         });
                     }
 
-                    /* -------- Center text appear after 65% -------- */
+                    /* -------- Center text -------- */
                     if (progress > 0.95 && !centerShown) {
                         centerShown = true;
-                        if (centerTween) centerTween.kill();
+                        centerTween?.kill();
                         centerTween = gsap.to(centerTextRef.current, {
                             opacity: 1,
                             y: 0,
                             scale: 1,
-                            duration: 1,
+                            duration: 0.8,
                             ease: "back.out(1.7)",
                         });
                     }
 
                     if (progress <= 0.95 && centerShown) {
                         centerShown = false;
-                        if (centerTween) centerTween.kill();
+                        centerTween?.kill();
                         centerTween = gsap.to(centerTextRef.current, {
                             opacity: 0,
                             y: 60,
                             scale: 0.1,
-                            duration: 0.6,
-                            ease: "power2.out",
+                            duration: 0.5,
                         });
                     }
 
-                    /* -------- Background color change -------- */
-                    if (progress >= 0.9) {
-                        gsap.to(sectionRef.current, { backgroundColor: "#F2FF33", duration: 0.5 });
-                    } else {
-                        gsap.to(sectionRef.current, { backgroundColor: "", duration: 0.5 });
-                    }
-
-                    // 🔥 LETTER CONTROL (middle text)
-                    // const lines = middleTextRef.current.querySelectorAll(".main_heading_about");
-
-                    // if (progress > 0.1 && progress < 0.97) {
-                    //     const localProgress = (progress - 0.1) / (0.97 - 0.1);
-
-                    //     lines.forEach((line, lineIndex) => {
-                    //         const letters = line.querySelectorAll(".letter");
-
-                    //         letters.forEach((letter, i) => {
-                    //             const delay = (lineIndex * 0.2) + (i * 0.04); // line + letter delay
-                    //             const p = Math.min(Math.max(localProgress - delay, 0), 1);
-
-                    //             gsap.set(letter, {
-                    //                 x: (1 - p) * 3,
-                    //                 skewX: (1 - p) * 3,
-                    //                 opacity: p,
-                    //             });
-                    //         });
-                    //     });
-                    // }
+                    /* -------- Background -------- */
+                    gsap.to(sectionRef.current, {
+                        backgroundColor: progress >= 0.9 ? "#F2FF33" : "",
+                        duration: 0.3,
+                    });
                 },
+
                 onLeave: () => {
                     animation.goToAndStop(totalFrames - 1, true);
                 },
@@ -208,12 +157,12 @@ const VolleyBallAnimation = () => {
 
         return () => {
             if (animation) animation.destroy();
-            ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+            if (triggerRef.current) triggerRef.current.kill(); // ✅ FIXED
         };
     }, []);
 
     return (
-        <section ref={sectionRef} className="basket-section h-100">
+        <section ref={sectionRef} className="basket-section">
             {window.innerWidth >= 768 && (
                 <div className="basket-wrapper">
                     <div ref={lottieContainer} className="basket-lottie"></div>
@@ -221,57 +170,36 @@ const VolleyBallAnimation = () => {
             )}
 
             <div className="volleyball_anim_content">
-                {/* Bottom Left Text */}
-                <div ref={bottomTextRef} className="bottom-text me-lg-0 me-3 d-none d-md-block">
-                    <LetterReveal text="Shape Tomorrow Through Action" className="heading_about text-c1 small_sm_abt_heading" />
-                </div>
-                {/* <div ref={bottomTextRef} className="bottom-text me-lg-0 me-3">
-                    <ScrollRevealText text="Transforming India Conclave 2026" className="reveal_heading main_heading_about" />
-                    <ScrollRevealText text="FlEX YOUR FUTURE 2026" className="reveal_heading" />
-                </div> */}
-                {/* Middle Text */}
-                <div ref={middleTextRef} className="middle-text d-none d-md-flex" style={{ opacity: 0 }}>
+                {/* Bottom Text */}
+                <div ref={bottomTextRef} className="bottom-text d-none d-md-block">
                     <LetterReveal
-                        text="Ssvm Transforming"
-                        className="heading_about main_heading_about"
-                    /><LetterReveal
-                        text="India Conclave"
-                        className="heading_about main_heading_about"
-                    /><LetterReveal
-                        text="2026"
-                        className="heading_about main_heading_about"
+                        text="Shape Tomorrow Through Action"
+                        className="heading_about text-c1"
                     />
-
-                    {/* <ScrollRevealText text="Ssvm Transforming" className="reveal_heading" />
-                    <ScrollRevealText text="India Conclave" className="reveal_heading" />
-                    <ScrollRevealText text="2026" className="reveal_heading" /> */}
                 </div>
 
-                {/* Center Text */}
+                {/* Middle Text */}
+                <div ref={middleTextRef} className="middle-text d-none d-md-flex">
+                    <LetterReveal text="Ssvm Transforming" className="heading_about" />
+                    <LetterReveal text="India Conclave" className="heading_about" />
+                    <LetterReveal text="2026" className="heading_about" />
+                </div>
+
+                {/* Center */}
                 <div ref={centerTextRef} className="center-text">
                     <div className="row justify-content-center">
-
                         <div className="col-lg-6">
-                            <img src={`${BASE_IMAGE_URL}ssvm-founder-anim.gif`} data-aos="zoom-in" data-aos-delay="100" className="w-100" alt="" />
+                            <img
+                                src={`${BASE_IMAGE_URL}ssvm-founder-anim.gif`}
+                                className="w-100"
+                                alt=""
+                            />
                         </div>
-                        <div className="left_fonder_content col-lg-12 d-flex flex-column align-items-center justify-content-center">
-                            <div data-aos="fade-up">
-                                <h2 className="main_heading_about">Dr. Manimekalai Mohan</h2>
-                                <h2 className="main_heading_about">Founder, SSVM Institutions</h2>
-                                {/* <LetterReveal
-                                    text="Dr. Manimekalai Mohan"
-                                    className="main_heading_about"
-                                />
-                                <LetterReveal
-                                    text="Founder, SSVM Institutions"
-                                    className="main_heading_about"
-                                /> */}
-                            </div>
-                            {/* <ScrollRevealText text="Dr. Manimekalai Mohan" className="reveal_heading" />
-                            <ScrollRevealText text="Founder, SSVM Institutions" className="reveal_heading" /> */}
+                        <div className="col-lg-12 text-center">
+                            <h2>Dr. Manimekalai Mohan</h2>
+                            <h2>Founder, SSVM Institutions</h2>
                         </div>
                     </div>
-
                 </div>
             </div>
         </section>

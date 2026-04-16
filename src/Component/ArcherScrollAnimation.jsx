@@ -152,6 +152,15 @@ const ArcherScrollAnimation = () => {
                         <div data-aos="fade-up">
                             <ScrollRevealText text="Studentpreneur Awards 2026" className="reveal_heading text-c1" />
                             <p>The Studentpreneur Awards is an initiative that encourages students to start thinking and acting like entrepreneurs early. It gives them a platform to showcase ideas they are actively working on and motivates them to take action instead of just thinking. The goal is to build confidence, real-world skills, and a mindset of creating and solving problems from a young age.</p>
+                            <div className="col-lg-12 mt-1">
+                                <div className="hero-actions d-flex justify-content-between w-100">
+                                    <div className="d-flex flex-column align-items-center justify-content-center">
+                                        <button className="btn-primary ssvm_reg_butt">
+                                            <span>Register</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
