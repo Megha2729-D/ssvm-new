@@ -162,7 +162,7 @@ const VolleyBallAnimation = () => {
     }, []);
 
     return (
-        <section ref={sectionRef} className="basket-section">
+        <section ref={sectionRef} className="basket-section h-100">
             {window.innerWidth >= 768 && (
                 <div className="basket-wrapper">
                     <div ref={lottieContainer} className="basket-lottie"></div>
