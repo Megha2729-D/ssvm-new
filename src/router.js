@@ -13,28 +13,24 @@ const Router = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        // 🔒 Lock scroll during preloader
         document.body.style.overflow = "hidden";
 
         const timer = setTimeout(() => {
             setLoading(false);
-
-            // 🔓 Unlock scroll
             document.body.style.overflow = "auto";
 
-            // ✅ Wait for DOM + layout to stabilize before GSAP calculates
-            requestAnimationFrame(() => {
-                requestAnimationFrame(() => {
+            // ✅ WAIT until everything (images, Lottie, DOM) is fully loaded
+            window.addEventListener("load", () => {
+                setTimeout(() => {
                     ScrollTrigger.refresh(true);
-                });
+                }, 50);
             });
 
-        }, 2000); // your preloader duration
+        }, 2000);
 
         return () => clearTimeout(timer);
     }, []);
 
-    // 🔥 Optional but recommended (global GSAP stability)
     useEffect(() => {
         gsap.config({
             autoSleep: 60,
@@ -44,6 +40,12 @@ const Router = () => {
         ScrollTrigger.config({
             ignoreMobileResize: true,
         });
+
+        // ✅ GLOBAL FIX for multiple pinned sections
+        ScrollTrigger.defaults({
+            anticipatePin: 1,
+        });
+
     }, []);
 
     if (loading) {
