@@ -10,37 +10,41 @@ import Preloader from "./Component/Preloader";
 gsap.registerPlugin(ScrollTrigger);
 
 const Router = () => {
-
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        // 🚫 Stop early GSAP calculations
-        ScrollTrigger.config({
-            autoRefreshEvents: "none",
-        });
-
-        document.body.style.overflow = "hidden"; // lock scroll
+        // 🔒 Lock scroll during preloader
+        document.body.style.overflow = "hidden";
 
         const timer = setTimeout(() => {
             setLoading(false);
-        }, 2000);
+
+            // 🔓 Unlock scroll
+            document.body.style.overflow = "auto";
+
+            // ✅ Wait for DOM + layout to stabilize before GSAP calculates
+            requestAnimationFrame(() => {
+                requestAnimationFrame(() => {
+                    ScrollTrigger.refresh(true);
+                });
+            });
+
+        }, 2000); // your preloader duration
 
         return () => clearTimeout(timer);
     }, []);
 
-    // ✅ AFTER preloader is removed → enable GSAP
+    // 🔥 Optional but recommended (global GSAP stability)
     useEffect(() => {
-        if (!loading) {
-            setTimeout(() => {
-                ScrollTrigger.config({
-                    autoRefreshEvents: "visibilitychange,DOMContentLoaded,load",
-                });
+        gsap.config({
+            autoSleep: 60,
+            force3D: true,
+        });
 
-                ScrollTrigger.refresh(); // 🔥 FIXES YOUR ISSUE
-                document.body.style.overflow = "auto"; // unlock scroll
-            }, 100); // small buffer
-        }
-    }, [loading]);
+        ScrollTrigger.config({
+            ignoreMobileResize: true,
+        });
+    }, []);
 
     if (loading) {
         return <Preloader />;

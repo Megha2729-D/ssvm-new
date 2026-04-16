@@ -142,6 +142,10 @@
     right: 0;
 }
 
+.basket-section {
+    min-height: 100vh;
+}
+
 @media screen and (min-width: 768px) {
     .basket-section {
         /* background-color: #ffffff; */

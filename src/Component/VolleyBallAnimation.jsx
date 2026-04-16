@@ -20,13 +20,13 @@ const VolleyBallAnimation = () => {
     const centerTextRef = useRef(null);
 
     // AOS is initialized globally in Homepage.jsx
-    useEffect(() => {
-        // Refresh ScrollTrigger when this component mounts to account for its height
-        ScrollTrigger.refresh();
-    }, []);
+    // useEffect(() => {
+    //     // Refresh ScrollTrigger when this component mounts to account for its height
+    //     ScrollTrigger.refresh();
+    // }, []);
     useEffect(() => {
         const handleResize = () => {
-            ScrollTrigger.refresh();
+            // ScrollTrigger.refresh();
         };
 
         window.addEventListener("resize", handleResize);
@@ -72,14 +72,18 @@ const VolleyBallAnimation = () => {
             gsap.set(bottomTextRef.current, { opacity: 1, y: 0 });
             gsap.set(middleTextRef.current, { opacity: 0, y: 0 });
             gsap.set(centerTextRef.current, { opacity: 0, y: 60, scale: 0.1 });
-
+            // gsap.set(sectionRef.current, {
+            //     height: "100vh"   // ✅ lock height
+            // });
             ScrollTrigger.create({
                 trigger: sectionRef.current,
                 start: "top top",
                 end: () => "+=" + window.innerHeight * 1.48,
                 scrub: true,
                 pin: true,
+                pinSpacing: true,
                 anticipatePin: 1,
+                invalidateOnRefresh: true,
 
                 onUpdate: (self) => {
                     const progress = self.progress;
@@ -208,7 +212,7 @@ const VolleyBallAnimation = () => {
 
     return (
         <section ref={sectionRef} className="basket-section h-100">
-            {!window.innerWidth < 768 && (
+            {window.innerWidth >= 768 && (
                 <div className="basket-wrapper">
                     <div ref={lottieContainer} className="basket-lottie"></div>
                 </div>
@@ -224,7 +228,7 @@ const VolleyBallAnimation = () => {
                     <ScrollRevealText text="FlEX YOUR FUTURE 2026" className="reveal_heading" />
                 </div> */}
                 {/* Middle Text */}
-                <div ref={middleTextRef} className="middle-text d-none d-md-flex" style={{opacity: 0}}>
+                <div ref={middleTextRef} className="middle-text d-none d-md-flex" style={{ opacity: 0 }}>
                     <LetterReveal
                         text="Ssvm Transforming"
                         className="heading_about main_heading_about"
