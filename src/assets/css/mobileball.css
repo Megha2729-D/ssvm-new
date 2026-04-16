@@ -123,7 +123,6 @@
 .left_fonder_content h2:last-child {
     font-family: var(--body-font) !important;
     font-size: 17px;
-    font-weight: 900;
 }
 
 .left_fonder_content h2 .letter {
