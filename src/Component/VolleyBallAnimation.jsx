@@ -122,7 +122,7 @@ const VolleyBallAnimation = () => {
                     }
 
                     /* -------- Middle text appears after bottom hides (40% → 35%) -------- */
-                    if (progress > 0.7 && progress < 0.96 && !centerShown && !middleShown) {
+                    if (progress > 0.75 && progress < 0.96 && !centerShown && !middleShown) {
                         middleShown = true;
                         if (middleTween) middleTween.kill();
                         middleTween = gsap.to(middleTextRef.current, {
@@ -133,7 +133,7 @@ const VolleyBallAnimation = () => {
                         });
                     }
 
-                    if ((progress <= 0.7 || progress >= 0.96) && middleShown) {
+                    if ((progress <= 0.75 || progress >= 0.96) && middleShown) {
                         middleShown = false;
                         if (middleTween) middleTween.kill();
                         middleTween = gsap.to(middleTextRef.current, {
